@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>タイトルタイトルタイトルタイトルタイトル</title>
+
+    <meta name="description" content="サイトの概要文サイトの概要文サイトの概要文サイトの概要文">
+
+    <link rel="stylesheet" href="favicon.ico">
+    
+    
+    <!-- プラグイン、外部モジュール
+        ■ CSS：リセット、FontAwesome（CDN）、Swiper、animate（wow）
+        ■ JS：jQuery（CDN）、Swiper、wow
+    -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/lib/reset.css"><!-- Swiper -->
+    <!-- fontawesome ： https://fontawesome.com/account/cdn -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/lib/swiper.min.css"><!-- Swiper -->
+    <link rel="stylesheet" href="css/lib/animate.css"><!-- animate（wow） -->
+    <link rel="stylesheet" href="css/style.css"><!-- Original -->
+
+    <!-- JavaScript -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="js/lib/swiper.min.js"></script><!-- Swiper -->
+    <script src="js/lib/wow.min.js"></script><!-- wow -->
+    <script src="js/script.js"></script><!-- Original -->
+    
+</head>
+<body>
+<div class="wrapper">
+
+    <!---------------------------------------------
+    --- ヘッダー
+    ----------------------------------------------->
+    <header class="header">
+
+        <h2 class="heaer__title"></h2>
+
+        <!-- ドロワーメニュー -->
+        <button class="header__drawer for-drawer" id="js-drawer" data-target="for-drawer">
+            <span class="header__drawer--bars">
+                <span class="header__drawer--bar"></span>
+                <span class="header__drawer--bar"></span>
+                <span class="header__drawer--bar"></span>
+            </span>
+        </button>
+        <div class="header__drawer-bg for-drawer"></div><!-- ドロワー背景 -->
+
+        <!-- ナビゲーションリンク -->
+        <nav class="header__nav for-drawer">
+            <ul class="header__nav--list">
+                <li class="header__nav--item"><a href="#access" class="header__nav--link js-drawer-item">アクセス</a></li>
+                <li class="header__nav--item"><a href="#contact" class="header__nav--link js-drawer-item">お問い合わせ</a></li>
+            </ul>
+        </nav>
+
+    </header><!-- /.header -->
+
+    <!---------------------------------------------
+    --- メイン
+    ----------------------------------------------->
+    <main class="main">
+
+        <!--
+            utilリンク 
+            <div class="util__link __link"><a href="#"></a></div>
+        -->
+
+        <!-- セクション -->
+        <section id="" class="">
+            <h2 class="section__title __title">セクションタイトル</h2>
+            <div class="inner __inner">
+            </div>
+        </section><!-- /. -->
+
+
+        <!-- アクセス -->
+        <section id="access" class="access">
+            <h2 class="section__title access__title">アクセス</h2>
+            <div class="inner access__inner">
+
+            </div>
+        </section><!-- /. -->
+
+
+        <!-- お問い合わせ -->
+        <section id="contact" class="contact">
+            <h2 class="section__title contact__title">お問い合わせ</h2>
+            <div class="inner contact__inner">
+                
+                <!-- お問い合わせフォーム -->
+                <div class="contact__content">
+                    <form action="" method="post">
+                        <dl class="contact__list">
+
+                            <div class="contact__item"><!-- 種別 -->
+                                <dt class="contact__item--title">種別</dt>
+                                <dd class="contact__item--description">
+                                    <select name="kind" id="kind">
+                                        <option value="-">選択してください</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                    </select>
+                                </dd>
+                            </div>
+                            <div class="contact__item"><!-- 氏名 -->
+                                <dt class="contact__item--title">氏名</dt>
+                                <dd class="contact__item--description">
+                                    <input type="text" name="name" id="name" placeholder="氏名">
+                                </dd>
+                            </div>
+                            <div class="contact__item"><!-- フリガナ -->
+                                <dt class="contact__item--title">フリガナ</dt>
+                                <dd class="contact__item--description">
+                                    <input type="text" name="name_kana" id="name_kana" placeholder="フリガナ">
+                                </dd>
+                            </div>
+                            <div class="contact__item"><!-- メールアドレス -->
+                                <dt class="contact__item--title">メールアドレス</dt>
+                                <dd class="contact__item--description">
+                                    <input type="email" name="email" id="email" placeholder="sample@example.com">
+                                </dd>
+                            </div>
+                            <div class="contact__item"><!-- 性別 -->
+                                <dt class="contact__item--title">性別</dt>
+                                <dd class="contact__item--description">
+                                    <div class="contact__radio">
+                                        <input type="radio" value="male" id="male" name="gender" checked>
+                                        <label for="male">男性</label>
+                                    </div>
+                                    <div class="contact__radio">
+                                        <input type="radio" value="female" id="female" name="gender">
+                                        <label for="female">女性</label>
+                                    </div>    
+                                </dd>
+                            </div>
+                            <div class="contact__item"><!-- その他 -->
+                                <dt class="contact__item--title">その他</dt>
+                                <dd class="contact__item--description">
+                                    <textarea></textarea>
+                                </dd>
+                            </div>
+                        </dl>
+                        <div class="contact__privacy"><!-- プライバリーポリシー -->
+                            <input type="checkbox" name="privacy" id="privacy" checked>
+                            <label for="privacy">個人情報保護方針に同意する</label>
+                        </div>
+                        <!-- 送信ボタン -->
+                        <button class="contact__submit" id="submit" disabled>送信する</button>
+                    </form>
+                </div>
+
+            </div>
+        </section><!-- /.contact -->
+
+    </main>
+    <!-- /.main -->
+
+
+    <!---------------------------------------------
+    --- フッター
+    ----------------------------------------------->
+    <footer class="inner footer">
+        <a href="#" class="util__floating"></a><!-- フローティングアイテム -->
+        <div class="inner footer__inner">
+
+        </div>
+    </footer><!-- /.footer -->
+    
+</div>
+</body>
+</html>

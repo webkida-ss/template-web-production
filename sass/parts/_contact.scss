@@ -1,0 +1,58 @@
+.contact{
+
+    &__inner{
+        // width:(*px/$layout-pc-width-canvas) * 100%;
+        // padding: 0 *px 0 *px;
+        @include mq(sp) {
+            // width:(*px/$layout-pc-width-canvas) * 100%;
+            // padding: 0 *px 0 *px;
+        }
+    }
+
+    &__title{
+    
+    }
+
+    &__content{
+    
+    }
+
+    &__list{
+    
+    }
+
+    &__item{
+        &--title{
+        
+        }
+        &--description{
+            select{
+                // 
+            }
+            input{
+                // 
+            }
+            textarea{
+                // 
+            }
+            input[type="text"]{
+                // 
+            }
+            input[type="email"]{
+                // 
+            }
+        }
+    }
+    
+    &__radio{
+    
+    }
+
+    &__privacy{
+    
+    }
+
+    &__submit{
+    
+    }
+}

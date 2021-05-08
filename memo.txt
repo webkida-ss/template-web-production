@@ -1,0 +1,15 @@
+■ gulp
+[npm i -g]
+　gulp、gulp-sass、gulp-postcss、css-mqpacker、autoprefixer、postcss、gulp-csscomb
+　※ ksmt-trip-client、デイトラのpackage.jsonを参照すること
+[gulp実行]
+　以下のエラーが出る
+　　Error: Cannot find module ‘gulp-sass’
+  　→ https://qiita.com/DNA1980/items/11fdb7233fc288ac3502
+      export NODE_PATH=`npm root -g` 
+      → ~/.bash_profile に記入
+
+■ CSScomb
+https://csscomb.herokuapp.com/config
+/Applications/Visual Studio Code.app/Contents/csscomb.json
+

@@ -1,0 +1,147 @@
+// ------------------------------------------------------------
+// セクション
+// ------------------------------------------------------------
+.section {
+	&__title {
+		font-weight: bold;
+		// font-size: *rem;
+		// line-height: 1;
+		font-family: $font-family-english;// 英語の場合
+		text-align: center;
+
+		@include mq(sp) {
+			// font-size: *rem;
+		}
+	}
+}
+
+
+// -----------------------------------------------------------------------------
+// 共通系（便利系）
+// -----------------------------------------------------------------------------
+
+// ------------------------------------------------------------
+// インナー
+// ------------------------------------------------------------
+.inner {
+	width: ($layout-width-inner-pc / $layout-width-canvas-pc) * 100% ;
+	max-width: 100%;
+	height: inherit;// 高さは親を継承
+	margin: 0 auto;
+
+	@include mq(sp) {
+		width: auto;
+		// margin: 0 *px;// 固定マージン
+	}
+}
+
+// ------------------------------------------------------------
+// 表示制御
+// ------------------------------------------------------------
+
+// PCだけ非表示
+.hidden-pc {
+	@include mq(sp) {
+		display: none;
+	}
+}
+
+// タブレットだけ非表示
+.hidden-tab {
+	@include mq(tab-only) {
+		display: none;
+	}
+}
+
+// スマホだけ非表示
+.hidden-sp {
+	@include mq(sp) {
+		display: none;
+	}
+}
+
+// ------------------------------------------------------------
+// util
+// ------------------------------------------------------------
+.util {
+	// $util-link-pc-width: *px;
+	// $util-link-pc-height: *px;
+	// $util-link-sp-width: *px;
+	// $util-link-sp-height: *px;
+
+	// 共通リンクボタン
+	&__link {
+		width: $util-link-pc-width;
+		height: $util-link-pc-height;
+		margin: 0 auto;
+		font-weight: bold;
+		// font-size: *rem;
+		line-height: $util-link-pc-height;
+		text-align: center;
+
+		@include mq(sp) {
+			width: $util-link-sp-width;
+			height: $util-link-sp-height;
+			// font-size: *rem;
+			line-height: $util-link-sp-height;
+		}
+
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			border: 1px solid $black;
+			transition: all .5s ease 0s;
+			&:hover {
+				border: 1px solid $white;
+				background: $black;
+				color: $white;
+			}
+		}
+	}
+
+	// フローティングアイテム
+	&__floating {
+		opacity: 0;
+		position: fixed;
+		right: 30px;
+		bottom: 30px;
+		z-index: map-get($layer , floating);
+		width: 50px;
+		height: 50px;
+		border: 1px solid $black;
+		background: $gray;
+		transition: all .8s ease 0s;
+		&::before {
+			display: block;
+			position: absolute;
+			top: 20px;
+			left: 17px;
+			transform: rotate(45deg);
+			width: 15px;
+			height: 15px;
+			content: '';
+			transition: opacity 1s ease 0s;
+
+			border-top: 3px solid $black;
+			border-left: 3px solid $black;
+		}
+		&.is-show {
+			opacity: 1;
+		}
+	}
+}
+
+// ------------------------------------------------------------
+// main
+// ------------------------------------------------------------
+.main {
+	//
+}
+
+// ------------------------------------------------------------
+// wrapper
+// ------------------------------------------------------------
+.wrapper {
+	//
+}
