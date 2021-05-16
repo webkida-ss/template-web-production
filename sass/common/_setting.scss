@@ -19,11 +19,20 @@ $color-background-base: $white; // 背景色
 $color-text-base: $black; // テキスト色
 $hover-opacity: .6; // 透過度
 
+// ヘッダー高さ
+$header-height-pc: 100px;
+$header-height-sp: 60px;
+
+// 余白
+$padding-pc: 40px;
+$padding-tab: 24px;
+$padding-sp: 16px;
+
 // レイアウト幅
 $layout-width-canvas-pc: 1280px;
-$layout-width-inner-pc: 1200px;
+$layout-width-inner-pc: $layout-width-canvas-pc - ($padding-pc * 2);
 $layout-width-canvas-sp: 375px;
-$layout-width-inner-sp: 343px;
+$layout-width-inner-sp: $layout-width-canvas-sp - ($padding-sp * 2);
 
 // 階層
 $layer: (
@@ -36,14 +45,8 @@ $layer: (
 	default: 1,
 );
 
-// 余白
-$padding-pc: 24px;
-$padding-tab: 24px;
-$padding-sp: 16px;
 
-// ヘッダー高さ
-$header-height-pc: 100px;
-$header-height-sp: 60px;
+
 
 // フォントインポート
 

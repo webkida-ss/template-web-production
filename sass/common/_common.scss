@@ -64,26 +64,26 @@
 // util
 // ------------------------------------------------------------
 .util {
-	// $util-link-pc-width: *px;
-	// $util-link-pc-height: *px;
-	// $util-link-sp-width: *px;
-	// $util-link-sp-height: *px;
+	$util-link-width-pc: 100px;
+	$util-link-height-pc: 50px;
+	$util-link-width-sp: $util-link-width-pc;
+	$util-link-height-sp: $util-link-height-pc;
 
 	// 共通リンクボタン
 	&__link {
-		width: $util-link-pc-width;
-		height: $util-link-pc-height;
+		width: $util-link-width-pc;
+		height: $util-link-height-pc;
 		margin: 0 auto;
 		font-weight: bold;
 		// font-size: *rem;
-		line-height: $util-link-pc-height;
+		line-height: $util-link-height-pc;
 		text-align: center;
 
 		@include mq(sp) {
-			width: $util-link-sp-width;
-			height: $util-link-sp-height;
+			width: $util-link-width-sp;
+			height: $util-link-height-sp;
 			// font-size: *rem;
-			line-height: $util-link-sp-height;
+			line-height: $util-link-height-sp;
 		}
 
 		a {
@@ -110,7 +110,7 @@
 		width: 50px;
 		height: 50px;
 		border: 1px solid $black;
-		background: $gray;
+		background: $black;
 		transition: all .8s ease 0s;
 		&::before {
 			display: block;
