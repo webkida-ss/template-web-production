@@ -64,7 +64,25 @@
             }
         }
         &--link{
-
+            position: relative;
+            // 選択時の下線
+            &::after{
+                display: block;
+                position: absolute;
+                transform: scale(0);// 最初は非表示
+                width: 100%;
+                height: 2px;
+                content: '';
+                // opacity: 0;// opacity方式でも可能
+                transition: transform .5s ease 0s;
+                border-bottom: 2px solid $dark-gray;
+            }
+            &:hover {
+                &::after {
+                    // opacity: 1;
+                    transform: scale(1);
+                }
+            }
         }
     }
 
