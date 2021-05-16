@@ -30,7 +30,8 @@
 	margin: 0 auto;
 
 	@include mq(sp) {
-		width: auto;
+		// width: auto;
+		width: ($layout-width-inner-sp / $layout-width-canvas-sp) * 100% ;
 		// margin: 0 *px;// 固定マージン
 	}
 }
