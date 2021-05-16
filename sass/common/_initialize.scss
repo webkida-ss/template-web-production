@@ -37,7 +37,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-wrap: break-word;// ブラウザがテキストボックスに改行を入れる場合に文字の途中でも改行する
-	@include mq('sp') {
+	@include mq(sp) {
 		padding-top: $header-height-sp;
 	}
 }
