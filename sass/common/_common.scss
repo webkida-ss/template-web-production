@@ -69,6 +69,7 @@
 	$util-link-height-pc: 50px;
 	$util-link-width-sp: $util-link-width-pc;
 	$util-link-height-sp: $util-link-height-pc;
+	$border-size: 3px;
 
 	// 共通リンクボタン
 	&__link {
@@ -77,14 +78,14 @@
 		margin: 0 auto;
 		font-weight: bold;
 		// font-size: *rem;
-		line-height: $util-link-height-pc;
+		line-height: $util-link-height-pc - ($border-size * 2);
 		text-align: center;
 
 		@include mq(sp) {
 			width: $util-link-width-sp;
 			height: $util-link-height-sp;
 			// font-size: *rem;
-			line-height: $util-link-height-sp;
+			line-height: $util-link-height-sp - ($border-size * 2);
 		}
 
 		a {
@@ -94,7 +95,7 @@
 			border: 1px solid $black;
 			transition: all .5s ease 0s;
 			&:hover {
-				border: 1px solid $white;
+				border: $border-size solid $white;
 				background: $black;
 				color: $white;
 			}
