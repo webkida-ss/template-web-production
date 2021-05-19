@@ -22,16 +22,20 @@
 
 // ------------------------------------------------------------
 // インナー
+// width：固定値
+// max-width：100% → 縮めたときには100%表示
 // ------------------------------------------------------------
 .inner {
-	width: ($layout-width-inner-pc / $layout-width-canvas-pc) * 100% ;
+	// width: ($layout-width-inner-pc / $layout-width-canvas-pc) * 100% ;
+	width: $layout-width-inner-pc;
 	max-width: 100%;
 	height: inherit;// 高さは親を継承
 	margin: 0 auto;
 
 	@include mq(sp) {
 		// width: auto;
-		width: ($layout-width-inner-sp / $layout-width-canvas-sp) * 100% ;
+		// width: ($layout-width-inner-sp / $layout-width-canvas-sp) * 100% ;
+		width: $layout-width-inner-sp;
 		// margin: 0 *px;// 固定マージン
 	}
 }
