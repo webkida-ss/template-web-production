@@ -3,7 +3,7 @@
 // ------------------------------------------------------------
 .section {
 	&__title {
-		font-weight: bold;
+		font-weight: $font-weight-bold;
 		// font-size: *rem;
 		// line-height: 1;
 		font-family: $font-family-english;// 英語の場合
@@ -80,7 +80,7 @@
 		width: $util-link-width-pc;
 		height: $util-link-height-pc;
 		margin: 0 auto;
-		font-weight: bold;
+		font-weight: $font-weight-bold;
 		// font-size: *rem;
 		line-height: $util-link-height-pc - ($border-size * 2);
 		text-align: center;
