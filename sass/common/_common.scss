@@ -129,8 +129,9 @@
 			content: '';
 			transition: opacity 1s ease 0s;
 
-			border-top: 3px solid $black;
-			border-left: 3px solid $black;
+			$util-link-border: 3px solid $white;
+			border-top: $util-link-border;
+			border-left: $util-link-border;
 		}
 		&.is-show {
 			opacity: 1;
