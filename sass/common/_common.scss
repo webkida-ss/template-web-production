@@ -46,7 +46,7 @@
 
 // PCだけ非表示
 .hidden-pc {
-	@include mq(sp) {
+	@include mq(pc) {
 		display: none;
 	}
 }
