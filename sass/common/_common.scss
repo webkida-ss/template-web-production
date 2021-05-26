@@ -32,6 +32,9 @@
 	height: inherit;// 高さは親を継承
 	margin: 0 auto;
 
+	@include mq(tab-only) {
+		width: $layout-width-inner-tab;
+	}
 	@include mq(sp) {
 		// width: auto;
 		// width: ($layout-width-inner-sp / $layout-width-canvas-sp) * 100% ;
@@ -41,7 +44,37 @@
 }
 
 // ------------------------------------------------------------
-// 表示制御
+// 表示制御（表示）
+// ------------------------------------------------------------
+// PCだけ表示
+.display-only-pc {
+	@include mq(tab) {
+		display: none;
+	}
+}
+
+// タブレットだけ表示
+.display-only-tab {
+	@include mq(pc) {
+		display: none;
+	}
+	@include mq(sp) {
+		display: none;
+	}
+}
+
+// スマホだけ表示
+.display-only-sp {
+	@include mq(pc) {
+		display: none;
+	}
+	@include mq(tab-only) {
+		display: none;
+	}
+}
+
+// ------------------------------------------------------------
+// 表示制御（非表示）
 // ------------------------------------------------------------
 
 // PCだけ非表示
@@ -64,6 +97,7 @@
 		display: none;
 	}
 }
+
 
 // ------------------------------------------------------------
 // util
