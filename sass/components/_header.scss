@@ -1,31 +1,44 @@
-.header{
-    // ------------------------------------------------------------
-    // 固定する場合はfixかつ、bodyにpadding-topついてるかチェック
-    // ------------------------------------------------------------
-
-    position: fixed;// ヘッダー位置固定
+.header {
+	// ------------------------------------------------------------
+	// 固定する場合はfixかつ、bodyにpadding-topついてるかチェック
+	// ------------------------------------------------------------
+	position: fixed;// ヘッダー位置固定
 	top: 0;
 	left: 0;
-    z-index: map-get($layer,header);
-    width: 100%;
+	z-index: map-get($layer,header);
+	width: 100%;
 	height: $header-height-pc;
 	// padding: *px 0;
 
-    &__title{
+	&__title {
+		// ロゴなら
+		width: 100px;
+		height: 100px;
+        transition: opacity .5s ease 0s;
+		img {
+			width: 100%;
+			height: 100%;
+		}
 
-    }
+        &:hover {
+			opacity: .6;
+			cursor: pointer;
+		}
+	}
 
-    &__inner{
-    
-    }
+	&__inner {
+		display: flex; // タイトル と ナビゲーションは横並び
+        align-items: center; // 上下中央揃え
+	}
 
-    // ------------------------------------------------------------
-    // ナビゲーション
-    // ドロワー開いている際はメニュー
-    // ------------------------------------------------------------
-    &__nav{
+	// ------------------------------------------------------------
+	// ナビゲーション
+	// ドロワー開いている際はメニュー
+	// ------------------------------------------------------------
+	&__nav {
+		margin-left: auto;// ナビゲーションを右寄せ
 
-        @include mq(sp) {
+		@include mq(sp) {
 			position: fixed;// ドロワーメニュー位置固定
 			top: 0;
 			right: 0;
@@ -40,124 +53,124 @@
 			}
 		}
 
-        &--list{
-            display: flex;// 横並び
-            justify-content: center;// 左右中央揃え
-            align-items: center;// 上下中央揃え
-            height: inherit;
+		&--list {
+			display: flex;// 横並び
+			justify-content: center;// 左右中央揃え
+			align-items: center;// 上下中央揃え
+			height: inherit;
 
-            @include mq(sp) {
-                display: block;
-            }
-        }
-        &--item{
+			@include mq(sp) {
+				display: block;
+			}
+		}
+		&--item {
 
-            & + & {
-                // margin-left: *px;
+			& + & {
+				// margin-left: *px;
+				@include mq(tab-only) {
+					// margin-left: *px;
+				}
+				@include mq(sp) {
+					// margin: *px 0 0 0;
+				}
+			}
+		}
+		&--link {
+			position: relative;
+			// 選択時の下線
+			&::after {
+				display: block;
+				position: absolute;
+				transform: scale(0);// 最初は非表示
+				width: 100%;
+				height: 2px;
+				content: '';
+				// opacity: 0;// opacity方式でも可能
+				transition: transform .5s ease 0s;
 
-                @include mq(tab-only) {
-                    // margin-left: *px;
-                }
-                @include mq(sp) {
-                    // margin: *px 0 0 0;
-                }
-            }
-        }
-        &--link{
-            position: relative;
-            // 選択時の下線
-            &::after{
-                display: block;
-                position: absolute;
-                transform: scale(0);// 最初は非表示
-                width: 100%;
-                height: 2px;
-                content: '';
-                // opacity: 0;// opacity方式でも可能
-                transition: transform .5s ease 0s;
-                border-bottom: 2px solid $dark-gray;
-            }
-            &:hover {
-                &::after {
-                    // opacity: 1;
-                    transform: scale(1);
-                }
-            }
-        }
-    }
+				border-bottom: 2px solid $dark-gray;
+			}
+			&:hover {
+				&::after {
+					// opacity: 1;
+					transform: scale(1);
+				}
+			}
+		}
+	}
 
-    // ------------------------------------------------------------
-    // ドロワー
-    // ------------------------------------------------------------
-    &__drawer{ // ドロワーボタン（ハンバーガメニュー）
-        display: none;
-        position: fixed;
+	// ------------------------------------------------------------
+	// ドロワー
+	// ------------------------------------------------------------
+	&__drawer { // ドロワーボタン（ハンバーガメニュー）
+		display: none;
+		position: fixed;
 		top: 0px;
 		right: 0px;
 		z-index: map-get($layer, drawer);
-        // background: transparent;
-        transition: all .5s ease 0s;
+		// background: transparent;
+		transition: all .5s ease 0s;
 
-        @include mq(sp) { // スマホのみ表示
+		@include mq(sp) { // スマホのみ表示
 			display: block;
 		}
 
-        &.is-checked {
+		&.is-checked {
 			transform: translateX(-300px); // ボタンの位置を調整
 		}
 
-        &--bars{
-            display: inline-block;
-            position: relative;
-            // width: *px;
-            // height: *px;
-        }
-        &--bar{
-            display: block;
-            position: absolute;
-            right: 0;
-            width: 100%;
-            height: 4px;
-            background: $black;
+		&--bars {
+			display: inline-block;
+			position: relative;
+			// width: *px;
+			// height: *px;
+		}
+		&--bar {
+			display: block;
+			position: absolute;
+			right: 0;
+			width: 100%;
+			height: 4px;
+			background: $black;
 
-            &:nth-of-type(1) {
-                top: 0px;
-            }
-            &:nth-of-type(2) {
-                top: 8px;
-            }
-            &:nth-of-type(3) {
-                top: 16px;
-            }
+			&:nth-of-type(1) {
+				top: 0px;
+			}
+			&:nth-of-type(2) {
+				top: 8px;
+			}
+			&:nth-of-type(3) {
+				top: 16px;
+			}
 
-            .is-checked & {
-                &:nth-of-type(1) {
-                    top: 10px;
-                    transform: rotate(-45deg);
-                }
-                &:nth-of-type(2) {
-                    background: transparent; // バツ印のため2本目は非表示
-                }
-                &:nth-of-type(3) {
-                    top: 10px;
-                    transform: rotate(45deg);
-                }
-            }
-        }
-    }
-    &__drawer-bg{// 背景
-        display: none;
+			.is-checked & {
+				&:nth-of-type(1) {
+					top: 10px;
+					transform: rotate(-45deg);
+				}
+				&:nth-of-type(2) {
+					background: transparent; // バツ印のため2本目は非表示
+				}
+				&:nth-of-type(3) {
+					top: 10px;
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+	&__drawer-bg {// 背景
+		display: none;
 		position: fixed;
 		top: 0;
 		left: 0;
-        z-index: map-get($layer, drawer-bg);
-        width: 100%;
+		z-index: map-get($layer, drawer-bg);
+		width: 100%;
 		height: 100%;
-        background: $black;
-        transition: all .5s ease 0s;
-        &.is-checked {
+		background: $black;
+		transition: all .5s ease 0s;
+		&.is-checked {
 			display: block;
 			opacity: .5;
 		}
-    }
+	}
 }
