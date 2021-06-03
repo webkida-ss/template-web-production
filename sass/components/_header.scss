@@ -3,9 +3,9 @@
     // 固定する場合はfixかつ、bodyにpadding-topついてるかチェック
     // ------------------------------------------------------------
 
-    // position: fixed;// ヘッダー位置固定
-	// top: 0;
-	// left: 0;
+    position: fixed;// ヘッダー位置固定
+	top: 0;
+	left: 0;
     z-index: map-get($layer,header);
     width: 100%;
 	height: $header-height-pc;
@@ -26,9 +26,9 @@
     &__nav{
 
         @include mq(sp) {
-			// position: fixed;// ドロワーメニュー位置固定
-			// top: 0;
-			// right: 0;
+			position: fixed;// ドロワーメニュー位置固定
+			top: 0;
+			right: 0;
 			z-index: map-get($layer, drawer);
 			transform: translateX(105%); // スマホで閉じてる時は非表示（画面外に押し出す）
 			width: 300px;
@@ -91,9 +91,9 @@
     // ------------------------------------------------------------
     &__drawer{ // ドロワーボタン（ハンバーガメニュー）
         display: none;
-        // position: fixed;
-		// top: *px;
-		// right: *px;
+        position: fixed;
+		top: 0px;
+		right: 0px;
 		z-index: map-get($layer, drawer);
         // background: transparent;
         transition: all .5s ease 0s;
@@ -147,9 +147,9 @@
     }
     &__drawer-bg{// 背景
         display: none;
-		// position: fixed;
-		// top: 0;
-		// left: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
         z-index: map-get($layer, drawer-bg);
         width: 100%;
 		height: 100%;
