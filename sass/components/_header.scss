@@ -112,6 +112,7 @@
 		z-index: map-get($layer, drawer);
 		// background: transparent;
 		transition: all .5s ease 0s;
+		border: none;
 
 		@include mq(sp) { // スマホのみ表示
 			display: block;
