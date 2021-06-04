@@ -69,14 +69,21 @@
 			}
 		}
 		&--item {
-
+			@include mq(tab-only) {
+				// font-size: rem;
+			}
+			@include mq(sp) {
+				// font-size: rem;
+				// margin-top: px;
+				text-align: center;
+			}
 			& + & {
 				// margin-left: *px;
 				@include mq(tab-only) {
 					// margin-left: *px;
 				}
 				@include mq(sp) {
-					// margin: *px 0 0 0;
+					// margin: 10px 0 0 0;
 				}
 			}
 		}
