@@ -39,6 +39,7 @@
 	// ------------------------------------------------------------
 	&__nav {
 		margin-left: auto;// ナビゲーションを右寄せ
+		transition: all .5s ease 0s;
 
 		@include mq(sp) {
 			position: fixed;// ドロワーメニュー位置固定
