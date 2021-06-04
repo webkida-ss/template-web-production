@@ -9,7 +9,9 @@
 	width: 100%;
 	height: $header-height-pc;
 	// padding: *px 0;
-
+	@include mq(sp) {
+		height: $header-height-sp;
+	}
 	&__title {
 		// ロゴなら
 		width: 100px;
@@ -122,8 +124,8 @@
 		&--bars {
 			display: inline-block;
 			position: relative;
-			// width: *px;
-			// height: *px;
+			width: 30px;
+			height: 30px;
 		}
 		&--bar {
 			display: block;
