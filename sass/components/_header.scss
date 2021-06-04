@@ -9,6 +9,7 @@
 	width: 100%;
 	height: $header-height-pc;
 	// padding: *px 0;
+
 	@include mq(sp) {
 		height: $header-height-sp;
 	}
@@ -16,13 +17,13 @@
 		// ロゴなら
 		width: 100px;
 		height: 100px;
-        transition: opacity .5s ease 0s;
+		transition: opacity .5s ease 0s;
 		img {
 			width: 100%;
 			height: 100%;
 		}
 
-        &:hover {
+		&:hover {
 			opacity: .6;
 			cursor: pointer;
 		}
@@ -30,7 +31,7 @@
 
 	&__inner {
 		display: flex; // タイトル と ナビゲーションは横並び
-        align-items: center; // 上下中央揃え
+		align-items: center; // 上下中央揃え
 	}
 
 	// ------------------------------------------------------------
@@ -48,6 +49,7 @@
 			z-index: map-get($layer, drawer);
 			transform: translateX(105%); // スマホで閉じてる時は非表示（画面外に押し出す）
 			width: 300px;
+			height: 100%;
 			// padding-top: *px;
 			background: $white;
 
@@ -121,7 +123,7 @@
 		&.is-checked {
 			transform: translateX(-300px); // ボタンの位置を調整
 		}
-		&:hover{
+		&:hover {
 			cursor: pointer;
 		}
 		&--bars {
