@@ -113,7 +113,6 @@
 		z-index: map-get($layer, drawer);
 		// background: transparent;
 		transition: all .5s ease 0s;
-		border: none;
 
 		@include mq(sp) { // スマホのみ表示
 			display: block;
@@ -122,7 +121,9 @@
 		&.is-checked {
 			transform: translateX(-300px); // ボタンの位置を調整
 		}
-
+		&:hover{
+			cursor: pointer;
+		}
 		&--bars {
 			display: inline-block;
 			position: relative;
