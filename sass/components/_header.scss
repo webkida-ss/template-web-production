@@ -109,9 +109,9 @@
 		display: none;
 		position: fixed;
 		top: 0px;
-		right: 0px;
+		right: $padding-sp;
 		z-index: map-get($layer, drawer);
-		// background: transparent;
+		background: transparent;
 		transition: all .5s ease 0s;
 
 		@include mq(sp) { // スマホのみ表示
