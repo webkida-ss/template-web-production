@@ -96,7 +96,11 @@ $(function () {
 	 *********************************************/
 	let formName = $('#name'),
 		formKana = $('#name_kana'),
+		formPhone = $('#phone'),
 		formEmail = $('#email'),
+		formCreateRequest = $('#create-request'),
+		formRepairRequest = $('#repair-request'),
+		formOtherRequest = $('#other-request'),
 		formPrivacy = $('#privacy'),
 		formSubmit = $('#submit');
 	// チェックフラグ
@@ -104,6 +108,7 @@ $(function () {
 		flgKana = false,
 		flgPhone = false,
 		flgEmail = false,
+		flgRequest = false,
 		flgPrivacy = false;
 	// 正規表現
 	let regKana = /^([ァ-ン]|ー)+$/;
@@ -117,7 +122,7 @@ $(function () {
 	let checkPhone = phone => (checkEmpty(phone) ||
 		(phone.match(regPhone) == null && phone.match(regPhoneHyphen) == null)); // 電話番号チェック（ハイフンなし/あり両方とも許容）	let checkEmail = email => (checkEmpty(email) || email.match(regEmail) == null); // メールアドレスチェック
 	let checkEmail = email => (checkEmpty(email) || email.match(regEmail) == null); // メールアドレスチェック
-	let checkDisable = () => (flgName && flgKana && flgPhone && flgEmail && flgPrivacy); // 必須項目総チェック
+	let checkDisable = () => (flgName && flgKana && flgPhone && flgEmail && flgRequest && flgPrivacy); // 必須項目総チェック
 	// 送信ボタンのdisableチェック、トグルによる変更
 	function submitBtnCheckAndToggle() {
 		if (checkDisable()) {
@@ -164,6 +169,19 @@ $(function () {
 		} else {
 			flgEmail = true;
 		}
+		submitBtnCheckAndToggle();
+	});
+	// [入力時] ご依頼内容チェック
+	formCreateRequest.change(function () {
+		flgRequest = true;
+		submitBtnCheckAndToggle();
+	});
+	formRepairRequest.change(function () {
+		flgRequest = true;
+		submitBtnCheckAndToggle();
+	});
+	formOtherRequest.change(function () {
+		flgRequest = true;
 		submitBtnCheckAndToggle();
 	});
 	// [入力時] プライバリーポリシーチェック
