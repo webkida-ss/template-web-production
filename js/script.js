@@ -99,18 +99,23 @@ $(function () {
 		formEmail = $('#email'),
 		formPrivacy = $('#privacy'),
 		formSubmit = $('#submit');
+	// チェックフラグ
 	let flgName = false,
 		flgKana = false,
+		flgPhone = false,
 		flgEmail = false,
 		flgPrivacy = false;
+	// 正規表現
 	let regKana = /^([ァ-ン]|ー)+$/;
 	let regEmail = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
+	let regPhone = /^0[789]0-[0-9]{4}-[0-9]{4}$/;
 	// チェック方針：アウトな場合trueを返す
 	let checkEmpty = str => (str == '' || str == null); // 空チェック
 	let checkName = name => checkEmpty(name); // 氏名チェック
 	let checkKana = kana => (checkEmpty(kana) || kana.match(regKana) == null); // カタカナのみチェック
+	let checkPhone = phone => (checkEmpty(phone) || phone.match(regPhone) == null); // 電話番号チェック
 	let checkEmail = email => (checkEmpty(email) || email.match(regEmail) == null); // メールアドレスチェック
-	let checkDisable = () => (flgName && flgKana && flgEmail && flgPrivacy);
+	let checkDisable = () => (flgName && flgKana && flgPhone && flgEmail && flgPrivacy); // 必須項目総チェック
 	// 送信ボタンのdisableチェック、トグルによる変更
 	function submitBtnCheckAndToggle() {
 		if (checkDisable()) {
@@ -136,6 +141,16 @@ $(function () {
 			flgKana = false;
 		} else {
 			flgKana = true;
+		}
+		submitBtnCheckAndToggle();
+	});
+	// [入力時] 電話番号チェック
+	formPhone.change(function () {
+		if (checkPhone(formPhone.val())) {
+			alert('電話番号形式で入力してください。');
+			flgPhone = false;
+		} else {
+			flgPhone = true;
 		}
 		submitBtnCheckAndToggle();
 	});
