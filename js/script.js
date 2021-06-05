@@ -108,12 +108,14 @@ $(function () {
 	// 正規表現
 	let regKana = /^([ァ-ン]|ー)+$/;
 	let regEmail = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
-	let regPhone = /^0[789]0-[0-9]{4}-[0-9]{4}$/;
+	let regPhone = /^0[789]0[0-9]{4}[0-9]{4}$/;
+	let regPhoneHyphen = /^0[789]0-[0-9]{4}-[0-9]{4}$/;
 	// チェック方針：アウトな場合trueを返す
 	let checkEmpty = str => (str == '' || str == null); // 空チェック
 	let checkName = name => checkEmpty(name); // 氏名チェック
 	let checkKana = kana => (checkEmpty(kana) || kana.match(regKana) == null); // カタカナのみチェック
-	let checkPhone = phone => (checkEmpty(phone) || phone.match(regPhone) == null); // 電話番号チェック
+	let checkPhone = phone => (checkEmpty(phone) ||
+		(phone.match(regPhone) == null && phone.match(regPhoneHyphen) == null)); // 電話番号チェック（ハイフンなし/あり両方とも許容）	let checkEmail = email => (checkEmpty(email) || email.match(regEmail) == null); // メールアドレスチェック
 	let checkEmail = email => (checkEmpty(email) || email.match(regEmail) == null); // メールアドレスチェック
 	let checkDisable = () => (flgName && flgKana && flgPhone && flgEmail && flgPrivacy); // 必須項目総チェック
 	// 送信ボタンのdisableチェック、トグルによる変更
