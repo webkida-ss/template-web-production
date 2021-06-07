@@ -61,12 +61,14 @@ $font-weight-base: 400;
 $font-weight-bold: 600;
 $line-height-base: 1.6;
 
-// ブレイクポイント 
+// ブレイクポイント
+$max-width-sp: 559;
+$max-width-tab: 959;
 $breakpoints: (
-	'sp': '(max-width: 559px)', // 〜559
-	'tab-only': '(min-width: 560px) and (max-width: 959px)', // 560〜959
-	'tab': '(max-width: 959px)', // 〜959
-	'pc': '(min-width: 960px)', // 960〜
+	'sp': '(max-width: #{$max-width-sp}px)', // 〜559
+	'tab-only': '(min-width: #{$max-width-sp + 1}px) and (max-width: #{$max-width-tab}px)', // 560〜959
+	'tab': '(max-width: #{$max-width-tab}px)', // 〜959
+	'pc': '(min-width: #{$max-width-tab + 1}px)', // 960〜
 );
 // $breakpoints:(
 // 	"sp": "(max-width: 767px)",// ~767
