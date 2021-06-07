@@ -1,5 +1,5 @@
 .access{
-    // padding: *px 0  *px;
+    @extend %section-padding;
     &__inner{
         // width:(*px / $layout-width-canvas-pc) * 100%;
         // padding: 0 *px 0 *px;

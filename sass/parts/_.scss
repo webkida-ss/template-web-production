@@ -1,6 +1,5 @@
 .a{ 
-    // padding: *px 0  *px;
-    // padding-top: *px;
+    @extend %section-padding;
 
     &__inner{
         // width:(*px / $layout-width-canvas-pc) * 100%;
