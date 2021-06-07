@@ -11,13 +11,13 @@
 //     @extend %btn-base;
 // }
 
-%section-padding{
-    padding: 70px 0;
-    @include mq(tab-only) {
+%section-padding {
+	padding: 70px 0;
+
+	@include mq(tab-only) {
 		padding: 50px 0;
 	}
 	@include mq(sp) {
 		padding: 30px 0;
 	}
 }
-
