@@ -177,15 +177,7 @@ $(function () {
 		submitBtnCheckAndToggle();
 	});
 	// [入力時] ご依頼内容チェック
-	formCreateRequest.change(function () {
-		flgRequest = true;
-		submitBtnCheckAndToggle();
-	});
-	formRepairRequest.change(function () {
-		flgRequest = true;
-		submitBtnCheckAndToggle();
-	});
-	formOtherRequest.change(function () {
+	formCreateRequest.add(formRepairRequest).add(formOtherRequest).change(function () {
 		flgRequest = true;
 		submitBtnCheckAndToggle();
 	});
