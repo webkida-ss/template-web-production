@@ -68,8 +68,13 @@ function css() {
 			})
 		)
 		.pipe($.sourcemaps.init())
-		.pipe($.sass())
-		.pipe($.autoprefixer()) // ベンダープレフィックス
+		// .pipe($.sass())
+		.pipe($.sass(output_style))
+		.pipe($.postcss([
+			$.mqpacker(),
+			$.autoprefixer(browser_list)
+		]))
+		// .pipe($.autoprefixer()) // ベンダープレフィックス
 		.pipe($.sourcemaps.write()) // ソースマップ
 		.pipe(dest(`${path.dist}/css`)) // 出力先
 		.pipe(

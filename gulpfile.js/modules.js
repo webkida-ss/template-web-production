@@ -6,7 +6,7 @@ module.exports = { // モジュールをエクスポート
 	browserSync: require('browser-sync'), // ファイル変更監視ブラウザ反映：Live Server的な
 	plumber: require('gulp-plumber'), // エラーで監視が強制終了されるのを防ぐ
 	notify: require('gulp-notify'), // エラーのデスクトップ通知
-	autoprefixer: require('gulp-autoprefixer'), // ベンダープレフィックス自動付与
+	// autoprefixer: require('gulp-autoprefixer'), // ベンダープレフィックス自動付与
 	sourcemaps: require('gulp-sourcemaps'), // SourceMapを作成する
 	rename: require('gulp-rename'), // リネーム
 	imagemin: require('gulp-imagemin'), // imageのminify化
@@ -17,5 +17,5 @@ module.exports = { // モジュールをエクスポート
 	postcss: require('gulp-postcss'),
 	mqpacker: require('css-mqpacker'), // メディアクエリ統一
 	csscomb: require('gulp-csscomb'), // CSSプロパティ記述整形
-	// autoprefixer: require('autoprefixer'), // ベンダープレフィックス自動付与
+	autoprefixer: require('autoprefixer'), // ベンダープレフィックス自動付与
 };
