@@ -50,6 +50,8 @@ function html() {
 		);
 }
 
+
+// scss
 // 設定
 let output_style = {
 	outputStyle: 'expanded'
@@ -57,10 +59,7 @@ let output_style = {
 let browser_list = {
 	overrideBrowserslist: ["last 2 versions", "ie >= 11"]
 }; // ベンダープレフィックス
-
-
-// CSS
-function css() {
+function scss() {
 	return src(`${path.src}/scss/*.scss`) // 対象scssファイル
 		.pipe(
 			$.plumber({ // エラーをデスクトップ通知
@@ -91,6 +90,9 @@ function css() {
 			})
 		);
 }
+
+
+
 
 // JS
 function js() {
@@ -147,14 +149,14 @@ function bs() {
 }
 
 exports.html = html;
-exports.css = css;
+exports.scss = scss;
 exports.js = js;
 exports.bs = bs;
 exports.img = img;
 
-exports.default = parallel([html, css, js, img, bs], () => {
+exports.default = parallel([html, scss, js, img, bs], () => {
 	watch(`${path.src}/pug/**`, html);
-	watch(`${path.src}/scss/**`, css);
+	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/js/**`, js);
 	watch(`${path.src}/img/**`, img);
 });
