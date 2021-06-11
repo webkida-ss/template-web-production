@@ -1,6 +1,5 @@
 /**
  * sass-comb/watch-combを使用するには、本ファイルと同階層に .csscomb.jsonが必要
- * VScodeの機能で単体 csscombも使用可能（定義は/Applications/Visual Studio Code.app/Contents/.csscomb.json）
  */
 
 /********************************************************************************************
@@ -67,12 +66,12 @@ function scss() {
 			})
 		)
 		.pipe($.sourcemaps.init())
-		// .pipe($.sass())
 		.pipe($.sass(output_style))
 		.pipe($.postcss([
 			$.mqpacker(),
-			$.autoprefixer(browser_list)
+			$.autoprefixer(browser_list) // ベンダープレフィックス
 		]))
+		.pipe($.csscomb())
 		// .pipe($.autoprefixer()) // ベンダープレフィックス
 		.pipe($.sourcemaps.write()) // ソースマップ
 		.pipe(dest(`${path.dist}/css`)) // 出力先
