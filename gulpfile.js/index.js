@@ -1,9 +1,6 @@
-/**
- * sass-comb/watch-combを使用するには、本ファイルと同階層に .csscomb.jsonが必要
- */
-
 /********************************************************************************************
  * 事前準備
+ * sass-comb/watch-combを使用するには、本ファイルと同階層に .csscomb.jsonが必要
  ********************************************************************************************/
 
 // 変数宣言
@@ -49,16 +46,16 @@ function html() {
 		);
 }
 
-
 // scss ====================================================================================
-// 設定
-let output_style = {
-	outputStyle: 'expanded'
-}; // 出力形式
-let browser_list = {
-	overrideBrowserslist: ["last 2 versions", "ie >= 11"]
-}; // ベンダープレフィックス
 function scss() {
+	// 設定
+	const output_style = {
+		outputStyle: 'expanded'
+	}; // 出力形式
+	const browser_list = {
+		overrideBrowserslist: ["last 2 versions", "ie >= 11"]
+	}; // ベンダープレフィックス
+
 	return src(`${path.src}/scss/*.scss`) // 対象scssファイル
 		.pipe(
 			$.plumber({ // エラーをデスクトップ通知
