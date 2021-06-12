@@ -1,0 +1,188 @@
+// ------------------------------------------------------------
+// セクション
+// ------------------------------------------------------------
+.section {
+	&__title {
+		font-weight: $font-weight-bold;
+		// font-size: *rem;
+		// line-height: 1;
+		font-family: $font-family-english;// 英語の場合
+		text-align: center;
+
+		@include mq(sp) {
+			// font-size: *rem;
+		}
+	}
+}
+
+
+// -----------------------------------------------------------------------------
+// 共通系（便利系）
+// -----------------------------------------------------------------------------
+
+// ------------------------------------------------------------
+// インナー
+// width：固定値
+// max-width：100% → 縮めたときには100%表示
+// ------------------------------------------------------------
+.inner {
+	// width: ($layout-width-inner-pc / $layout-width-canvas-pc) * 100% ;
+	width: $layout-width-inner-pc;
+	max-width: 100%;
+	height: inherit;// 高さは親を継承
+	margin: 0 auto;
+
+	@include mq(tab-only) {
+		width: $layout-width-inner-tab;
+	}
+	@include mq(sp) {
+		// width: auto;
+		// width: ($layout-width-inner-sp / $layout-width-canvas-sp) * 100% ;
+		width: $layout-width-inner-sp;
+		// margin: 0 *px;// 固定マージン
+	}
+}
+
+// ------------------------------------------------------------
+// 表示制御（表示）
+// ------------------------------------------------------------
+// PCだけ表示
+.display-only-pc {
+	@include mq(tab) {
+		display: none;
+	}
+}
+
+// タブレットだけ表示
+.display-only-tab {
+	@include mq(pc) {
+		display: none;
+	}
+	@include mq(sp) {
+		display: none;
+	}
+}
+
+// スマホだけ表示
+.display-only-sp {
+	@include mq(pc) {
+		display: none;
+	}
+	@include mq(tab-only) {
+		display: none;
+	}
+}
+
+// ------------------------------------------------------------
+// 表示制御（非表示）
+// ------------------------------------------------------------
+
+// PCだけ非表示
+.hidden-pc {
+	@include mq(pc) {
+		display: none;
+	}
+}
+
+// タブレットだけ非表示
+.hidden-tab {
+	@include mq(tab-only) {
+		display: none;
+	}
+}
+
+// スマホだけ非表示
+.hidden-sp {
+	@include mq(sp) {
+		display: none;
+	}
+}
+
+
+// ------------------------------------------------------------
+// util
+// ------------------------------------------------------------
+.util {
+	$util-link-width-pc: 100px;
+	$util-link-height-pc: 50px;
+	$util-link-width-sp: $util-link-width-pc;
+	$util-link-height-sp: $util-link-height-pc;
+	$border-size: 3px;
+
+	// 共通リンクボタン
+	&__link {
+		width: $util-link-width-pc;
+		height: $util-link-height-pc;
+		margin: 0 auto;
+		font-weight: $font-weight-bold;
+		// font-size: *rem;
+		line-height: $util-link-height-pc - ($border-size * 2);
+		text-align: center;
+
+		@include mq(sp) {
+			width: $util-link-width-sp;
+			height: $util-link-height-sp;
+			// font-size: *rem;
+			line-height: $util-link-height-sp - ($border-size * 2);
+		}
+
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			border: $border-size solid $black;
+			transition: all .5s ease 0s;
+			&:hover {
+				border: $border-size solid $white;
+				background: $black;
+				color: $white;
+			}
+		}
+	}
+
+	// フローティングアイテム
+	&__floating {
+		opacity: 0;
+		position: fixed;
+		right: 30px;
+		bottom: 30px;
+		z-index: map-get($layer , floating);
+		width: 50px;
+		height: 50px;
+		border: 1px solid $black;
+		background: $black;
+		transition: all .8s ease 0s;
+		&::before {
+			display: block;
+			position: absolute;
+			top: 20px;
+			left: 17px;
+			transform: rotate(45deg);
+			width: 15px;
+			height: 15px;
+			content: '';
+			transition: opacity 1s ease 0s;
+
+			$util-link-border: 3px solid $white;
+			border-top: $util-link-border;
+			border-left: $util-link-border;
+		}
+		&.is-show {
+			opacity: 1;
+		}
+	}
+}
+
+// ------------------------------------------------------------
+// main
+// ------------------------------------------------------------
+.main {
+	//
+}
+
+// ------------------------------------------------------------
+// wrapper
+// ------------------------------------------------------------
+.wrapper {
+	//
+}

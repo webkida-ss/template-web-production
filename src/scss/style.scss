@@ -1,0 +1,17 @@
+@charset 'UTF-8';
+
+// common
+@import 'common/_setting';// 基本設定
+@import 'common/_mixin';// ミックスイン
+@import 'common/_function';// ファンクション
+@import 'common/_placeholder';// プレースホルダー
+@import 'common/_initialize';// 初期化
+@import 'common/_common';// 共通系
+
+// components
+@import 'components/_header';// ヘッダー
+@import 'components/_footer';// フッター
+// parts
+@import 'parts/_';// 
+@import 'parts/_access';// アクセス
+@import 'parts/_contact';// お問い合わせ

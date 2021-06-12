@@ -1,0 +1,23 @@
+// --------------------------------------------------
+// 継承用クラス
+// --------------------------------------------------
+
+// ボタン（buttonタグで作成せず、div＆aタグで作成を想定）
+// %btn-base{ 
+// }
+
+// 強調ボタン
+// %btn-accents{
+//     @extend %btn-base;
+// }
+
+%section-padding {
+	padding: 70px 0;
+
+	@include mq(tab-only) {
+		padding: 50px 0;
+	}
+	@include mq(sp) {
+		padding: 30px 0;
+	}
+}

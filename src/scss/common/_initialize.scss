@@ -1,0 +1,62 @@
+// --------------------------------------------------
+// 初期化
+// ・疑似要素のサイジング → 枠線を含む
+// ・マージン、パディング 0 
+// ・フォント設定
+// ・画像表示設定(block)
+// ・リストスタイル none
+// ・リンクの下線なし、色は親要素を継承
+// --------------------------------------------------
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;// 10px → bodyにて16px
+}
+
+body {
+	padding-top: $header-height-pc;
+	overflow-x: hidden;// 横はみ出：隠す
+	background: $color-background-base;
+	color: $color-text-base;
+	font-weight: $font-weight-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	font-family: $font-family-base;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-wrap: break-word;// ブラウザがテキストボックスに改行を入れる場合に文字の途中でも改行する
+	@include mq(sp) {
+		padding-top: $header-height-sp;
+	}
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border: none;
+}
+
+ul,
+li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}

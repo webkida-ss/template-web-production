@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>タイトルタイトルタイトルタイトルタイトル</title>
+
+	<meta name="description" content="サイトの概要文サイトの概要文サイトの概要文サイトの概要文">
+
+	<link rel="icon" href="favicon.ico">
+
+
+	<!-- プラグイン、外部モジュール
+        ■ CSS：リセット、FontAwesome（CDN）、Swiper、animate（wow）
+        ■ JS：jQuery（CDN）、Swiper、wow
+    -->
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/lib/reset.css"><!-- リセット -->
+	<!-- fontawesome ： https://fontawesome.com/account/cdn -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+		integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/lib/swiper.min.css"><!-- Swiper -->
+	<link rel="stylesheet" href="css/lib/animate.css"><!-- animate（wow） -->
+	<link rel="stylesheet" href="css/style.css"><!-- Original -->
+
+	<!-- JavaScript -->
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+		crossorigin="anonymous"></script>
+	<script src="js/lib/swiper.min.js"></script><!-- Swiper -->
+	<script src="js/lib/wow.min.js"></script><!-- wow -->
+	<script src="js/script.js"></script><!-- Original -->
+
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<!--=============================================
+    === ヘッダー
+    ==============================================-->
+
+		<header class="header">
+			<div class="inner header__inner">
+				<h2 class="heaer__title">セクションタイトル</h2>
+
+				<!-- ドロワーメニュー -->
+				<div class="header__drawer for-drawer" id="js-drawer" data-target="for-drawer">
+					<span class="header__drawer--bars">
+						<span class="header__drawer--bar"></span>
+						<span class="header__drawer--bar"></span>
+						<span class="header__drawer--bar"></span>
+					</span>
+				</div>
+				<div class="header__drawer-bg for-drawer"></div><!-- ドロワー背景 -->
+
+				<!-- ナビゲーションリンク -->
+				<nav class="header__nav for-drawer">
+					<ul class="header__nav--list">
+						<li class="header__nav--item"><a href="#access" class="header__nav--link js-drawer-item">アクセス</a></li>
+						<li class="header__nav--item"><a href="#contact" class="header__nav--link js-drawer-item">お問い合わせ</a></li>
+					</ul>
+				</nav>
+			</div><!-- /.header__inner -->
+		</header><!-- /.header -->
+
+		<!--=============================================
+    === メイン
+    ==============================================-->
+		<main class="main">
+
+			<!--
+        utilリンク 
+        <div class="util__link __link"><a href="#"></a></div>
+      -->
+
+			<!-- セクション -->
+			<section id="dammy_id" class="">
+				<h2 class="section__title __title">セクションタイトル</h2>
+				<div class="inner __inner">
+				</div>
+			</section><!-- /. -->
+
+
+			<!-- アクセス -->
+			<section id="access" class="access">
+				<h2 class="section__title access__title">アクセス</h2>
+				<div class="inner access__inner">
+
+				</div>
+			</section><!-- /.access -->
+
+
+			<!-- お問い合わせ -->
+			<section id="contact" class="contact">
+				<h2 class="section__title contact__title">お問い合わせ</h2>
+				<div class="inner contact__inner">
+
+					<!-- お問い合わせフォーム -->
+					<div class="contact__content">
+						<form action="#" method="post">
+							<dl class="contact__list">
+								<div class="contact__item">
+									<!-- 種別 -->
+									<dt class="contact__item--title">種別</dt>
+									<dd class="contact__item--description">
+										<select name="kind" id="kind">
+											<option value="-">選択してください</option>
+											<option value="A">A</option>
+											<option value="B">B</option>
+										</select>
+									</dd>
+								</div><!-- /.contact__item -->
+								<div class="contact__item">
+									<!-- 氏名 -->
+									<dt class="contact__item--title">氏名</dt>
+									<dd class="contact__item--description">
+										<input type="text" name="name" id="name" placeholder="氏名">
+									</dd>
+								</div><!-- /.contact__item -->
+								<div class="contact__item">
+									<!-- フリガナ -->
+									<dt class="contact__item--title">フリガナ</dt>
+									<dd class="contact__item--description">
+										<input type="text" name="name_kana" id="name_kana" placeholder="フリガナ">
+									</dd>
+								</div><!-- /.contact__item -->
+								<div class="contact__item">
+									<!-- 電話番号 -->
+									<dt class="contact__item--title">電話番号</dt>
+									<dd class="contact__item--description">
+										<input type="tel" name="phone" id="phone" placeholder="09012345678">
+									</dd>
+								</div><!-- /.contact__item -->
+								<div class="contact__item">
+									<!-- メールアドレス -->
+									<dt class="contact__item--title">メールアドレス</dt>
+									<dd class="contact__item--description">
+										<input type="email" name="email" id="email" placeholder="sample@example.com">
+									</dd>
+								</div><!-- /.contact__item -->
+								<div class="contact__item">
+									<!-- ご依頼内容 -->
+									<dt class="contact__item--title is-required">ご依頼内容</dt>
+									<dd class="contact__item--description is-request">
+										<div class="contact__radio">
+											<input type="radio" value="新規WEBサイト作成" id="create-request" name="request-context">
+											<label for="create-request">新規WEBサイト作成</label>
+										</div>
+										<div class="contact__radio">
+											<input type="radio" value="既存WEBサイト改修" id="repair-request" name="request-context">
+											<label for="repair-request">既存WEBサイト改修</label>
+										</div>
+										<div class="contact__radio">
+											<input type="radio" value="既存WEBサイト改修" id="other-request" name="request-context">
+											<label for="other-request">その他</label>
+										</div>
+									</dd>
+								</div><!-- /.contact__item -->
+								<div class="contact__item">
+									<!-- 備考 -->
+									<dt class="contact__item--title">備考</dt>
+									<dd class="contact__item--description">
+										<textarea></textarea>
+									</dd>
+								</div><!-- /.contact__item -->
+							</dl><!-- /.contact__list -->
+							<div class="contact__privacy">
+								<!-- プライバリーポリシー -->
+								<input type="checkbox" name="privacy" id="privacy" checked>
+								<label for="privacy">個人情報保護方針に同意する</label>
+							</div><!-- /.contact__privacy -->
+							<!-- 送信ボタン -->
+							<button class="contact__submit" id="submit" disabled>送信する</button>
+						</form>
+					</div><!-- /.contact__content -->
+				</div><!-- /.contact__inner -->
+			</section><!-- /.contact -->
+
+		</main>
+		<!-- /.main -->
+
+
+		<!--=============================================
+    === フッター
+    ==============================================-->
+		<footer class="footer">
+			<a href="#" class="util__floating"></a><!-- フローティングアイテム -->
+			<div class="inner footer__inner">
+
+			</div><!-- /.footer__inner -->
+		</footer><!-- /.footer -->
+
+	</div>
+</body>
+
+</html>
