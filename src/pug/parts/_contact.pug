@@ -1,0 +1,70 @@
+- 
+	const contactOptionList = [
+		{"value":"-","label":"選択してください"},
+		{"value":"A","label":"A"},
+		{"value":"B","label":"B"},
+	]
+	const contactRequestList = [
+		{"id":"create-request","value":"新規WEBサイト作成","label":"新規WEBサイト作成"},
+		{"id":"repair-request","value":"既存WEBサイト改修","label":"既存WEBサイト改修"},
+		{"id":"other-request","value":"その他","label":"その他"},
+	]
+
+section#contact.contact
+	h2.section__title.contact__title #{sectionList[1].label}
+	.inner.contact__inner
+		//- お問い合わせフォーム
+		.contact__content
+			form(action="#" method="post")
+				dl.contact__list
+					// 種別
+					.contact__item
+						dt.contact__item--title 種別
+						dd.contact__item--description
+							select(name="kind")#kind
+								each item in contactOptionList
+									option(value=item.value) #{item.label}
+					// 氏名
+					.contact__item
+						dt.contact__item--title 氏名
+						dd.contact__item--description
+							input#name(type="text" name="name" placeholder="氏名")
+					// フリガナ 
+					.contact__item
+						dt.contact__item--title フリガナ
+						dd.contact__item--description
+							input#name_kana(type="text" name="name_kana" placeholder="フリガナ")
+					// 電話番号 
+					.contact__item
+						dt.contact__item--title 電話番号
+						dd.contact__item--description
+							input#phone(type="tel" name="phone" placeholder="09012345678")
+					// メールアドレス 
+					.contact__item
+						dt.contact__item--title メールアドレス
+						dd.contact__item--description
+							input#email(type="email" name="email" placeholder="sample@example.com")
+					// ご依頼内容
+					.contact__item
+						dt.contact__item--title ご依頼内容
+						dd.contact__item--description.is-request
+							each item in contactRequestList
+								.contact__radio
+									input(type="radio" id=item.id value=item.value name="request-context")
+									label(for=item.id) #{item.label}
+					// 備考
+					.contact__item
+						dt.contact__item--title 備考
+						dd.contact__item--description
+							textarea#remarks(name="remarks")
+					//- dl閉じ
+
+				// プライバリーポリシー
+				.contact__privacy
+					input#privacy(type="checkbox" name="privacy" checked)
+					label(for="privacy") 個人情報保護方針に同意する
+				// 送信ボタン
+				button#submit(disabled).contact__submit 送信する
+					//- form閉じ
+
+		//- お問い合わせフォーム終了

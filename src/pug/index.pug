@@ -1,0 +1,30 @@
+extends _layout
+
+//- タイトルを指定
+block title
+	title タイトルタイトルタイトルタイトルタイトル
+
+block content
+	.wrapper
+
+		//- 共通変数クラス
+			一度読み込めば他部品でも変数を使用可能：むしろ各所でincludeするとエラーになる
+		include common/_variable
+
+		// ヘッダー
+		include components/_header
+
+		// メイン
+		main.main 
+
+			//- utilリンク
+			//- .util__link.__link
+			//- 	a(href="#") お問い合わせ
+			//- 変数
+
+			// アクセス
+			include parts/_access
+			// お問い合わせ
+			include parts/_contact
+		// フッター
+		include components/_footer
