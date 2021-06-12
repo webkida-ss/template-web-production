@@ -56,10 +56,16 @@ $layer: (
 $font-family-default: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
 $font-family-english: sans-serif;
 $font-family-base: $font-family-default;
-$font-size-base: 1.6rem;
 $font-weight-base: 400;
 $font-weight-bold: 600;
 $line-height-base: 1.6;
+// フォントサイズ
+$font-size-max: 3.4rem;
+$font-size-large: 2.2rem;
+$font-size-medium: 1.8rem;
+$font-size-base: 1.6rem; // 基準サイズ
+$font-size-small: 1.4rem;
+$font-size-min: 1.2rem;
 
 // ブレイクポイント
 $max-width-sp: 559;
