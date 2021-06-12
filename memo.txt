@@ -20,7 +20,9 @@ https://csscomb.herokuapp.com/config
 　gulp-plumber、gulp-notify、gulp-sourcemaps、gulp-rename、
 　gulp-imagemin、gulp-changed、uglify-es、gulp-uglify、gulp-autoprefixer
 
-
+■ 2021/06/11 インストール
+[npm i -g]
+　gulp-html-beautify：gulp化してない
 
 ■ リンク
 plumber、notify
