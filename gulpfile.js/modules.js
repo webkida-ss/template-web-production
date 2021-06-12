@@ -19,4 +19,5 @@ module.exports = { // モジュールをエクスポート
 	csscomb: require('gulp-csscomb'), // CSSプロパティ記述整形
 	autoprefixer: require('autoprefixer'), // ベンダープレフィックス自動付与
 	// htmlBeautify: require('gulp-html-beautify'), // HTML（Pug）フォーマット
+	// pugBeautify: require('gulp-pug-beautify'), // Pugフォーマット
 };

@@ -153,6 +153,23 @@ function bs() {
 	});
 }
 
+// Pugフォーマット ==========================================================================
+// Pug：VSCodeのフォーマッタにて管理のため、不使用
+// function pug_formatter() {
+// 	const option = {}
+// 	return src([`${path.src}/pug/*.pug`, `${path.src}/pug/**/_*.pug`]) // 対象pugファイル
+// 		.pipe(
+// 			$.plumber({ // エラーのデスクトップ通知
+// 				errorHandler: $.notify.onError('Error: <%= error.message %>'),
+// 			})
+// 		)
+// 		.pipe(
+// 			$.pugBeautify(option)
+// 		)
+// 		.pipe(dest(`${path.src}/pug`)) // 出力先
+// 	;
+// }
+
 // ========================================================================================
 
 exports.html = html;
@@ -161,11 +178,14 @@ exports.css = css;
 exports.js = js;
 exports.bs = bs;
 exports.img = img;
+// exports.pug_formatter = pug_formatter;
 
+// exports.default = parallel([html, scss, css, js, img, bs, pug_formatter], () => {
 exports.default = parallel([html, scss, css, js, img, bs], () => {
 	watch(`${path.src}/pug/**`, html);
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/css/**`, css);
 	watch(`${path.src}/js/**`, js);
 	watch(`${path.src}/img/**`, img);
+	// watch(`${path.src}/pug/**`, pug_formatter);
 });
