@@ -131,7 +131,7 @@
 			width: 100%;
 			height: 100%;
 			border: $border-size solid $black;
-			transition: all .5s ease 0s;
+			transition: all $transition-change-time ease 0s;
 			&:hover {
 				border: $border-size solid $white;
 				background: $black;
