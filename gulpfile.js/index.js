@@ -90,8 +90,17 @@ function scss() {
 		);
 }
 
-
-
+// CSS ====================================================================================
+function css() {
+	return src(`${path.src}/css/*.css`) // 対象cssファイル
+		.pipe(
+			$.plumber({ // エラーをデスクトップ通知
+				errorHandler: $.notify.onError('Error: <%= error.message %>'),
+			})
+		)
+		.pipe(dest(`${path.dist}/css/lib`)); // 出力先
+	// .pipe($.minifyCSS()) // CSS minify化
+}
 
 // JS =====================================================================================
 function js() {
@@ -151,13 +160,15 @@ function bs() {
 
 exports.html = html;
 exports.scss = scss;
+exports.css = css;
 exports.js = js;
 exports.bs = bs;
 exports.img = img;
 
-exports.default = parallel([html, scss, js, img, bs], () => {
+exports.default = parallel([html, scss, css, js, img, bs], () => {
 	watch(`${path.src}/pug/**`, html);
 	watch(`${path.src}/scss/**`, scss);
+	watch(`${path.src}/css/**`, css);
 	watch(`${path.src}/js/**`, js);
 	watch(`${path.src}/img/**`, img);
 });
