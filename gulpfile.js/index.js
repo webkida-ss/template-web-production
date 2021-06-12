@@ -86,17 +86,10 @@ function scss() {
 			})
 		);
 }
-
-// CSS ====================================================================================
+// css：minify化なし
 function css() {
 	return src(`${path.src}/css/*.css`) // 対象cssファイル
-		.pipe(
-			$.plumber({ // エラーをデスクトップ通知
-				errorHandler: $.notify.onError('Error: <%= error.message %>'),
-			})
-		)
 		.pipe(dest(`${path.dist}/css/lib`)); // 出力先
-	// .pipe($.minifyCSS()) // CSS minify化
 }
 
 // JavaScript =============================================================================
@@ -129,16 +122,12 @@ function js() {
 			})
 		);
 }
-// jsライブラリ
+// jsライブラリ：minify化なし
 function js_library() {
 	return src(`${path.src}/js/lib/*.js`)
-		.pipe(
-			$.plumber({ // エラーをデスクトップ通知
-				errorHandler: $.notify.onError('Error: <%= error.message %>'),
-			})
-		)
 		.pipe(dest(`${path.dist}/js/lib`));
 }
+
 // 画像 =====================================================================================
 function img() {
 	return src(`${path.src}/img/**/**`) // 対象img
