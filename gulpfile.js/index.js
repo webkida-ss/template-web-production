@@ -99,7 +99,7 @@ function css() {
 	// .pipe($.minifyCSS()) // CSS minify化
 }
 
-// JS =====================================================================================
+// JavaScript =============================================================================
 function js() {
 	return src(`${path.src}/js/**/*.js`, {
 			sourcemaps: true
@@ -115,7 +115,7 @@ function js() {
 			}
 		}))
 		.pipe(
-			$.concat('main.min.js', {
+			$.concat('script.min.js', {
 				newLine: '\n',
 			})
 		)
@@ -129,7 +129,16 @@ function js() {
 			})
 		);
 }
-
+// jsライブラリ
+function js_library() {
+	return src(`${path.src}/js/lib/*.js`)
+		.pipe(
+			$.plumber({ // エラーをデスクトップ通知
+				errorHandler: $.notify.onError('Error: <%= error.message %>'),
+			})
+		)
+		.pipe(dest(`${path.dist}/js/lib`));
+}
 // 画像 =====================================================================================
 function img() {
 	return src(`${path.src}/img/**/**`) // 対象img
@@ -176,16 +185,17 @@ exports.html = html;
 exports.scss = scss;
 exports.css = css;
 exports.js = js;
+exports.js_library = js_library;
 exports.bs = bs;
 exports.img = img;
 // exports.pug_formatter = pug_formatter;
 
-// exports.default = parallel([html, scss, css, js, img, bs, pug_formatter], () => {
-exports.default = parallel([html, scss, css, js, img, bs], () => {
+exports.default = parallel([html, scss, css, js, js_library, img, bs], () => {
 	watch(`${path.src}/pug/**`, html);
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/css/**`, css);
 	watch(`${path.src}/js/**`, js);
+	watch(`${path.src}/js/**`, js_library);
 	watch(`${path.src}/img/**`, img);
 	// watch(`${path.src}/pug/**`, pug_formatter);
 });
