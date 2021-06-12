@@ -1,5 +1,3 @@
-include ../common/_variable
-
 header.header
 	.inner.header__inner 
 		h2.heaer__title セクションタイトル
@@ -18,4 +16,4 @@ header.header
 			ul.header__nav--list
 				each item in sectionList
 					li.header__nav--item
-						a(href="#" + item.title).header__nav--link.js-drawer-item #{item.titleDisplay}
+						a(href="#" + item.id).header__nav--link.js-drawer-item #{item.displayName}
