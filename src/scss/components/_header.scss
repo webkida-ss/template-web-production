@@ -124,7 +124,10 @@
 		transition: all $transition-change-time ease 0s;
 
 		@include mq(sp) { // スマホのみ表示
-			display: block;
+			// 配下のbarsを上下中央揃え
+			display: flex;
+			align-items: center;
+			height: $header-height-sp;
 		}
 
 		&.is-checked {
