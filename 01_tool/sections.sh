@@ -25,7 +25,7 @@ do
   # 置換（-i ''：バックアップなし）
   sed -i '' "s/.a{/.${SECTION}{/" $SCSS_TARGET # クラス名を変換
   # Style.scss追記
-  echo "@import 'parts/_${SECTION};" >> $SCSS_STYLE
+  echo "@import 'parts/_${SECTION}';" >> $SCSS_STYLE
 
   
   ############################################################
