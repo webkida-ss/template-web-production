@@ -107,7 +107,7 @@
 	$util-link-height-pc: 50px;
 	$util-link-width-sp: $util-link-width-pc;
 	$util-link-height-sp: $util-link-height-pc;
-	$util-border-size: 3px;
+	$util-link-border-size: 3px;
 
 	// 共通リンクボタン
 	&__link {
@@ -116,21 +116,21 @@
 		margin: 0 auto;
 		font-weight: $font-weight-bold;
 		// font-size: *rem;
-		line-height: $util-link-height-pc - ($util-border-size * 2);
+		line-height: $util-link-height-pc - ($util-link-border-size * 2);
 		text-align: center;
 
 		@include mq(sp) {
 			width: $util-link-width-sp;
 			height: $util-link-height-sp;
 			// font-size: *rem;
-			line-height: $util-link-height-sp - ($util-border-size * 2);
+			line-height: $util-link-height-sp - ($util-link-border-size * 2);
 		}
 
 		a {
 			display: block;
 			width: 100%;
 			height: 100%;
-			border-width: $util-border-size;
+			border-width: $util-link-border-size;
 			border-style: solid;
 			border-color: $black;
 			transition: all $transition-change-time ease 0s;
@@ -165,9 +165,9 @@
 			content: '';
 			transition: opacity 1s ease 0s;
 
-			$util-link-border: 3px solid $white;
-			border-top: $util-link-border;
-			border-left: $util-link-border;
+			$util-floating-border: 3px solid $white;
+			border-top: $util-floating-border;
+			border-left: $util-floating-border;
 		}
 		&.is-show {
 			opacity: 1;
