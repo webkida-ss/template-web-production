@@ -169,9 +169,9 @@ function bs() {
 // }
 
 // ========================================================================================
-
+// タスクの定義
 exports.html = html;
-exports.scss = scss;
+exports.scss = scss; // gulp scss
 exports.css = css;
 exports.js = js;
 exports.js_library = js_library;
@@ -179,6 +179,7 @@ exports.bs = bs;
 exports.img = img;
 // exports.pug_formatter = pug_formatter;
 
+// 全てをwatchモードで起動
 exports.default = parallel([html, scss, css, js, js_library, img, bs], () => {
 	watch(`${path.src}/pug/**`, html);
 	watch(`${path.src}/scss/**`, scss);
@@ -187,4 +188,9 @@ exports.default = parallel([html, scss, css, js, js_library, img, bs], () => {
 	watch(`${path.src}/js/**`, js_library);
 	watch(`${path.src}/img/**`, img);
 	// watch(`${path.src}/pug/**`, pug_formatter);
+});
+
+// 全てをscssをwatchモードで起動
+exports.scss_watch = parallel([scss], () => {
+	watch(`${path.src}/scss/**`, scss);
 });
