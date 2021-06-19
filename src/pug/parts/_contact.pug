@@ -20,34 +20,34 @@ section#contact.contact
 					// 種別
 					.contact__item
 						dt.contact__item--title 種別
-						dd.contact__item--description
+						dd.contact__item--desc
 							select(name="kind")#kind
 								each item in contactOptionList
 									option(value=item.value) #{item.label}
 					// 氏名
 					.contact__item
 						dt.contact__item--title 氏名
-						dd.contact__item--description
+						dd.contact__item--desc
 							input#name(type="text" name="name" placeholder="氏名")
 					// フリガナ 
 					.contact__item
 						dt.contact__item--title フリガナ
-						dd.contact__item--description
+						dd.contact__item--desc
 							input#name_kana(type="text" name="name_kana" placeholder="フリガナ")
 					// 電話番号 
 					.contact__item
 						dt.contact__item--title 電話番号
-						dd.contact__item--description
+						dd.contact__item--desc
 							input#phone(type="tel" name="phone" placeholder="09012345678")
 					// メールアドレス 
 					.contact__item
 						dt.contact__item--title メールアドレス
-						dd.contact__item--description
+						dd.contact__item--desc
 							input#email(type="email" name="email" placeholder="sample@example.com")
 					// ご依頼内容
 					.contact__item
 						dt.contact__item--title ご依頼内容
-						dd.contact__item--description.is-request
+						dd.contact__item--desc.is-request
 							each item in contactRequestList
 								.contact__radio
 									input(type="radio" id=item.id value=item.value name="request-context")
@@ -55,7 +55,7 @@ section#contact.contact
 					// 備考
 					.contact__item
 						dt.contact__item--title 備考
-						dd.contact__item--description
+						dd.contact__item--desc
 							textarea#remarks(name="remarks")
 					//- dl閉じ
 
