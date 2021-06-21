@@ -61,7 +61,8 @@ $font-family-english: sans-serif;
 $font-family-base: $font-family-default;
 $font-weight-base: 400;
 $font-weight-bold: 600;
-$line-height-base: 1.6;
+$line-height-base: 1;// 基本設定
+$line-height-pra-base: 1.6;// 文章の場合の基本設定
 // フォントサイズ
 $font-size-max: 3.4rem;
 $font-size-large: 2.2rem;
