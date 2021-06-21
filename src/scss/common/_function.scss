@@ -21,3 +21,14 @@
 @function getLineHeightForBox($height, $border-size) {
 	@return $height - ($border-size * 2);
 }
+
+// ------------------------------------------------------------
+// linear-gradientを取得(透明の場合はtransparentを指定)
+// param : 
+//  $top-color 上色
+//  $under-color 下色
+//  $height 色チェンジの高さ
+// ------------------------------------------------------------
+@function getLinearGradient($top-color,$under-color,$height) {
+	@return linear-gradient(to bottom, $top-color 0 , $top-color $height ,$under-color $height,$under-color 100%);
+}
