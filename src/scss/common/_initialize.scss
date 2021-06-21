@@ -60,3 +60,8 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
+
+textarea{
+	// 下に余計な空白ができるのを防止
+	display: block;
+}
