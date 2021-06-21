@@ -116,14 +116,14 @@
 		margin: 0 auto;
 		font-weight: $font-weight-bold;
 		// font-size: *rem;
-		line-height: $util-link-height-pc - ($util-link-border-size * 2);
+		line-height: getLineHeightForBox($util-link-height-pc, $util-link-border-size);
 		text-align: center;
 
 		@include mq(sp) {
 			width: $util-link-width-sp;
 			height: $util-link-height-sp;
 			// font-size: *rem;
-			line-height: $util-link-height-sp - ($util-link-border-size * 2);
+			line-height: getLineHeightForBox($util-link-height-sp, $util-link-border-size);
 		}
 
 		a {

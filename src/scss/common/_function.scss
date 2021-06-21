@@ -11,3 +11,13 @@
 @function getCardWith($margin, $num) {
 	@return calc(((100% - (#{$margin} * (#{$num} - 1))) / #{$num}) - 1px);
 }
+
+// ------------------------------------------------------------
+// ボックスの中央揃えのための line-height 取得
+// param : 
+//  $margin マージン
+//  $num 枚数
+// ------------------------------------------------------------
+@function getLineHeightForBox($height, $border-size) {
+	@return $height - ($border-size * 2);
+}
