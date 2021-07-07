@@ -14,6 +14,7 @@
 		<!-- メイン-->
 		<main class="main">
 
+
 			<!-- ショートコード出力 -->
 			<?php echo do_shortcode(''); ?>
 
