@@ -190,7 +190,16 @@ exports.default = parallel([html, scss, css, js, js_library, img, bs], () => {
 	// watch(`${path.src}/pug/**`, pug_formatter);
 });
 
-// 全てをscssをwatchモードで起動
+// scssをwatchモードで起動
 exports.scss_watch = parallel([scss], () => {
 	watch(`${path.src}/scss/**`, scss);
+});
+
+// WP版
+exports.wp = parallel([scss, css, js, js_library, img], () => {
+	watch(`${path.src}/scss/**`, scss);
+	watch(`${path.src}/css/**`, css);
+	watch(`${path.src}/js/**`, js);
+	watch(`${path.src}/js/**`, js_library);
+	watch(`${path.src}/img/**`, img);
 });
