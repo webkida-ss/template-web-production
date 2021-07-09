@@ -1,4 +1,10 @@
 /********************************************************************************************
+ * localhost:3000
+ * 　HTMLの場合：proxyを有効化せず、serverを有効化
+ * 　WordPressの場合：serverを有効化せず、proxyにローカルホストを指定（adminのポートも3000になる）
+ ********************************************************************************************/
+
+/********************************************************************************************
  * 事前準備
  * sass-comb/watch-combを使用するには、本ファイルと同階層に .csscomb.jsonが必要
  ********************************************************************************************/
@@ -38,6 +44,17 @@ function html() {
 			})
 		)
 		.pipe(dest(path.dist)) // 出力先
+		.pipe(
+			$.browserSync.reload({ // ブラウザ即時反映
+				stream: true,
+				once: true,
+			})
+		);
+}
+
+// PHP =====================================================================================
+function php() {
+	return src([`./**/*.php`]) // 対象phpファイル
 		.pipe(
 			$.browserSync.reload({ // ブラウザ即時反映
 				stream: true,
@@ -146,6 +163,7 @@ function bs() {
 		server: {
 			baseDir: path.dist,
 		},
+		//proxy: 'http://localhost:10004/', // Local by Flywheelのドメイン
 		notify: true,
 		xip: false,
 	});
@@ -170,6 +188,7 @@ function bs() {
 
 // ========================================================================================
 // タスクの定義
+exports.php = php;
 exports.html = html;
 exports.scss = scss; // gulp scss
 exports.css = css;
@@ -196,7 +215,8 @@ exports.scss_watch = parallel([scss], () => {
 });
 
 // WP版
-exports.wp = parallel([scss, css, js, js_library, img], () => {
+exports.wp = parallel([php, scss, css, js, js_library, img, bs], () => {
+	watch(`./**/*.php`, php);
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/css/**`, css);
 	watch(`${path.src}/js/**`, js);
