@@ -32,3 +32,12 @@
 @function getLinearGradient($top-color,$under-color,$height) {
 	@return linear-gradient(to bottom, $top-color 0 , $top-color $height ,$under-color $height,$under-color 100%);
 }
+
+// ------------------------------------------------------------
+// 100%からwidthをひく
+// param : 
+//  $width ひく分のwidth
+// ------------------------------------------------------------
+@function getMinus100Percent($width) {
+	@return calc(100% - #{$width});
+}
