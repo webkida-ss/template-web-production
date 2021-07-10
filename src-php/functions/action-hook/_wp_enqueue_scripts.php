@@ -7,6 +7,11 @@
  * ① functionを設定
  * ② header.php、footer.phpにてwp_head、wp_footerをフックする。※ ファイル分割していること
  * 　 → functionで定義したstyleが読み込まれる
+ * 
+ * wp_enqueue_script（style）
+ * 第1引数：ハンドル名
+ * 第2引数：読み込むファイル名
+ * 第3引数：読み込むファイルの依存ファイル（事前に読み込む必要があるファイル）
  ************************************************************************/
 
 add_action('wp_enqueue_scripts', function () {
