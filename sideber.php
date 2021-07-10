@@ -1,2 +1,2 @@
-<aside>
+<aside class="sidebar">
 </aside>
