@@ -7,6 +7,7 @@
 // アクションフック
 get_template_part('src-php/functions/action-hook/_admin_menu');
 get_template_part('src-php/functions/action-hook/_after_setup_theme');
+get_template_part('src-php/functions/action-hook/_widgets_init');
 get_template_part('src-php/functions/action-hook/_wp_enqueue_scripts');
 
 // その他
