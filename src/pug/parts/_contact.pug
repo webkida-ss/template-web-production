@@ -21,7 +21,7 @@ section#contact.contact
 					.contact__item.is-kind
 						dt 種別
 						dd
-							select(name="kind")#kind
+							select#kind(name="kind")
 								each item in contactOptionList
 									option(value=item.value) #{item.label}
 					//- 氏名
