@@ -17,53 +17,53 @@ section#contact.contact
 		.contact__content
 			form(action="#" method="post")
 				dl.contact__list
-					// 種別
-					.contact__item
-						dt.contact__item--title 種別
-						dd.contact__item--desc
+					//- 種別
+					.contact__item.is-kind
+						dt 種別
+						dd
 							select(name="kind")#kind
 								each item in contactOptionList
 									option(value=item.value) #{item.label}
-					// 氏名
-					.contact__item
-						dt.contact__item--title 氏名
-						dd.contact__item--desc
+					//- 氏名
+					.contact__item.is-name
+						dt 氏名
+						dd
 							input#name(type="text" name="name" placeholder="氏名")
-					// フリガナ 
-					.contact__item
-						dt.contact__item--title フリガナ
-						dd.contact__item--desc
+					//- フリガナ 
+					.contact__item.is-name-kana
+						dt フリガナ
+						dd
 							input#name_kana(type="text" name="name_kana" placeholder="フリガナ")
-					// 電話番号 
-					.contact__item
-						dt.contact__item--title 電話番号
-						dd.contact__item--desc
+					//- 電話番号 
+					.contact__item.is-phone
+						dt 電話番号
+						dd
 							input#phone(type="tel" name="phone" placeholder="09012345678")
-					// メールアドレス 
-					.contact__item
-						dt.contact__item--title メールアドレス
-						dd.contact__item--desc
+					//- メールアドレス 
+					.contact__item.is-email
+						dt メールアドレス
+						dd
 							input#email(type="email" name="email" placeholder="sample@example.com")
-					// ご依頼内容
-					.contact__item
-						dt.contact__item--title ご依頼内容
-						dd.contact__item--desc.is-request
+					//- ご依頼内容
+					.contact__item.is-request
+						dt ご依頼内容
+						dd
 							each item in contactRequestList
-								.contact__radio
+								.contact__item--radio
 									input(type="radio" id=item.id value=item.value name="request-context")
 									label(for=item.id) #{item.label}
-					// 備考
-					.contact__item
-						dt.contact__item--title 備考
-						dd.contact__item--desc
+					//- 備考
+					.contact__item.is-remark
+						dt 備考
+						dd
 							textarea#remarks(name="remarks")
 				//- dl閉じ
 
-				// プライバリーポリシー
+				//- プライバリーポリシー
 				.contact__privacy
 					input#privacy(type="checkbox" name="privacy" checked)
 					label(for="privacy") 個人情報保護方針に同意する
-				// 送信ボタン
+				//- 送信ボタン
 				button#submit(disabled).contact__submit 送信する
 			//- form閉じ
 
