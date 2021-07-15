@@ -101,13 +101,12 @@
 // ------------------------------------------------------------
 // util
 // ------------------------------------------------------------
+$util-link-width-pc: 100px;
+$util-link-height-pc: 50px;
+$util-link-width-sp: $util-link-width-pc;
+$util-link-height-sp: $util-link-height-pc;
+$util-link-border-size: 3px;
 .util {
-	$util-link-width-pc: 100px;
-	$util-link-height-pc: 50px;
-	$util-link-width-sp: $util-link-width-pc;
-	$util-link-height-sp: $util-link-height-pc;
-	$util-link-border-size: 3px;
-
 	// 共通リンクボタン
 	&__link {
 		width: $util-link-width-pc;
