@@ -31,9 +31,22 @@
         // ===========================
         
         // タイトル ====================
-        dt{
-        // 
-        }
+		dt {
+			// 必須マーク
+			&.is-required {
+				display: flex;
+				align-items: center;
+				&::after {
+					display: inline-block;
+					height: 18px;
+					line-height: 18px;
+					margin-left: 20px;
+					font-size: 1.2rem;
+					text-align: center;
+					content: 'テキストテキスト';
+				}
+			}
+		}
         
         // 項目 ====================
         dd{
