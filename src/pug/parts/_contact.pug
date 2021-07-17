@@ -17,36 +17,36 @@ section#contact.contact
 		.contact__content
 			form(action="#" method="post")
 				dl.contact__list
-					//- 種別
+					//- 種別（セレクトボックス）
 					.contact__item.is-kind
 						dt 種別
 						dd
-							select(name="kind")#kind
+							select#kind(name="kind")
 								each item in contactOptionList
 									option(value=item.value) #{item.label}
 					//- 氏名
 					.contact__item.is-name
-						dt 氏名
+						dt.is-required 氏名
 						dd
 							input#name(type="text" name="name" placeholder="氏名")
 					//- フリガナ 
 					.contact__item.is-name-kana
-						dt フリガナ
+						dt.is-required フリガナ
 						dd
 							input#name_kana(type="text" name="name_kana" placeholder="フリガナ")
 					//- 電話番号 
 					.contact__item.is-phone
-						dt 電話番号
+						dt.is-required 電話番号
 						dd
 							input#phone(type="tel" name="phone" placeholder="09012345678")
 					//- メールアドレス 
 					.contact__item.is-email
-						dt メールアドレス
+						dt.is-required メールアドレス
 						dd
 							input#email(type="email" name="email" placeholder="sample@example.com")
-					//- ご依頼内容
+					//- ご依頼内容（ラジオボタン）
 					.contact__item.is-request
-						dt ご依頼内容
+						dt.is-required ご依頼内容
 						dd
 							each item in contactRequestList
 								.contact__item--radio
@@ -59,8 +59,8 @@ section#contact.contact
 							textarea#remarks(name="remarks")
 				//- dl閉じ
 
-				//- プライバリーポリシー
-				.contact__privacy
+				//- プライバリーポリシー（チェックボックス）
+				.contact__privacy.is-checkbox.is-privacy-check
 					input#privacy(type="checkbox" name="privacy" checked)
 					label(for="privacy") 個人情報保護方針に同意する
 				//- 送信ボタン
