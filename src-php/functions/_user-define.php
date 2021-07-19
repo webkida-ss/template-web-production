@@ -23,6 +23,6 @@ function get_child_pages($number = -1)
 		'post_parent' => $parent_id,
 	);
 	// サブクエリ実行
-	$child_pages = new WP_Query($args);
-	return $child_pages;
+	$pages = new WP_Query($args);
+	return $pages;
 }

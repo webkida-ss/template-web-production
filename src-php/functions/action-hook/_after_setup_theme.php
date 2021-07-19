@@ -23,4 +23,5 @@ add_action('after_setup_theme', function () {
 			'caption',
 		)
 	);
+	// add_image_size();画像のリサイズ
 });
