@@ -11,8 +11,14 @@
  * Version: 1.0
  * Description: 自分専用プラグイン
  * Auther: Shun Sakakida
+ * Auther URI: https://webkida.site/
  */
 
+/**
+ * プラグインはクラスで書かれていることが多い 
+ * → クラスでフックを記載する場合は配列で指定すること
+ * WP教科書No317
+ */
 
 // 以下、functions.phpで記載するような内容を書いておくとよい！
 add_shortcode('hogehoge', function () {
