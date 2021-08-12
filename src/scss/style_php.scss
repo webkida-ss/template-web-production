@@ -11,8 +11,11 @@
 // parts/common：共通
 @import 'parts/00_common/_header';// ヘッダー
 @import 'parts/00_common/_footer';// フッター
+@import 'parts/00_common/_nav';// ナビゲーション
+// parts/fixed：固定ページ
+@import 'parts/10_fixed/_toppage';// トップページ
+// parts/post：投稿
+@import 'parts/20_post/_';// 
 
-// parts
-@import 'parts/_';// 
-@import 'parts/_access';// アクセス
-@import 'parts/_contact';// お問い合わせ
+// @import 'parts/_access';// アクセス
+// @import 'parts/_contact';// お問い合わせ
