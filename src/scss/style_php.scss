@@ -8,16 +8,21 @@
 @import 'config/_initialize';// 初期化
 @import 'config/_common';// 共通系
 
-// parts/common：共通
-@import 'parts/00_common/_header';// ヘッダー
-@import 'parts/00_common/_footer';// フッター
-@import 'parts/00_common/_nav';// ナビゲーション
 
-// parts/fixed：固定ページ
-@import 'parts/10_fixed/_toppage';// トップページ
+// WPテンプレート ----------------------------------------------
+@import 'parts/00_template/_';
 
-// parts/post：投稿
-@import 'parts/20_post/_';// 
+// 共通系 -----------------------------------------------------
+@import 'parts/10_common/_header';// ヘッダー
+@import 'parts/10_common/_footer';// フッター
+
+// 部品系 ------------------------------------------------------
+
+// トップページ
+@import 'parts/20_component/01_top/_';
+
+// ニュース
+@import 'parts/20_component/02_news/_';
 
 // @import 'parts/_access';// アクセス
 // @import 'parts/_contact';// お問い合わせ

@@ -60,6 +60,10 @@ li {
 a {
 	color: inherit;
 	text-decoration: none;
+	transition: all $transition-change-time ease 0s;
+	&:hover {
+		// opacity: $hover-opacity;
+	}
 }
 
 textarea{
