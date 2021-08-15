@@ -185,22 +185,25 @@ $util-link-border-size: 3px;
 // ------------------------------------------------------------
 .container {
 	// display: flex;
+	// justify-content: space-between;
 }
 
 $sidebar-width-pc: 200px;
 $sidebar-width-tab: 150px;
 $sidebar-width-sp: 100px;
 
+$container-margin-width-pc: 20px;
+
 // ------------------------------------------------------------
 // main
 // ------------------------------------------------------------
 .main {
-	// width: getMinus100Percent($sidebar-width-pc);
+	// width: getMinus100Percent($sidebar-width-pc + $container-margin-width-pc );
 }
 
 // ------------------------------------------------------------
 // sidebar
 // ------------------------------------------------------------
 .sidebar {
-	// 
+	// width: $sidebar-width-pc;
 }
