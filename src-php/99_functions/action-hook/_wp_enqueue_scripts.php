@@ -20,5 +20,8 @@ add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_style('style', get_template_directory_uri() . '/dist/css/style.min.css', array(), '1.0.0', 'all');
 	// wp_enqueue_style('', '//', '1.0.0', 'all');
 	// JS読み込み：$deps 依存JS、$in_footer：true：</body> 終了タグの前に配置される： wp_footer() の位置注意
+	// jQuery
+	// wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), '3.4.1');
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), '3.4.1');
 	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/script.min.js', array('jquery'), '1.0.0', true);
 });

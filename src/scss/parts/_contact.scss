@@ -45,6 +45,9 @@
 			select {
 				// 
 			}
+
+			// apperance:none
+
 			// ラジオボタン、チェックボックス以外は、横幅いっぱい
 			input:not([type='radio']):not([type='checkbox']),
 			textarea {
