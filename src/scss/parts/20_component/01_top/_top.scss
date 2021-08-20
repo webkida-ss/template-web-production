@@ -1,0 +1,20 @@
+.top{ 
+    @extend %section-padding;
+
+    &__inner{
+        // width:(*px / $layout-width-canvas-pc) * 100%;
+        // padding: 0 *px 0 *px;
+        @include mq(tab-only) {
+            // width:(*px / $layout-width-canvas-tab) * 100%;
+            // padding: 0 *px 0 *px;
+        }
+        @include mq(sp) {
+            // width:(*px / $layout-width-canvas-sp) * 100%;
+            // padding: 0 *px 0 *px;
+        }
+    }
+
+    &__title{
+        // 
+    }
+}
