@@ -9,8 +9,8 @@
 @import 'config/_common';// 共通系
 
 // parts/common：共通
-@import 'parts/parts/10_common/_header';// ヘッダー
-@import 'parts/parts/10_common/_footer';// フッター
+@import 'parts/10_common/_header';// ヘッダー
+@import 'parts/10_common/_footer';// フッター
 
 // parts
 @import 'parts/_';// 
