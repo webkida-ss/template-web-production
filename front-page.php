@@ -30,7 +30,9 @@
 			<!-------------------------- 
 			- サイドバー
 			---------------------------->
-			<?php get_sidebar(); ?>
+			<aside class="aside">
+				<?php get_sidebar(); ?>
+			</aside>
 
 		</div><!-- /.container -->
 
