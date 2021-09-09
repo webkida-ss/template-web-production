@@ -1,0 +1,23 @@
+scss 
+ | ー style.scss：各scssをインポート
+ | 
+ | ー config：
+ |      | ー _common.scss      ：共通処理を記載
+ |      | ー _function.scss    ：関数
+ |      | ー _initialize.scss  ：初期化（reset）
+ |      | ー _mixin.scss       ：mixin（メディアクエリなど）
+ |      | ー _placeholder.scss ：継承用クラス
+ |      | ー _setting.scss     ：定数定義
+ | 
+ | ー parts
+ |      | ー 00_template
+ |                | ー ***.scss
+ |                | ー ***.scss
+ |                | ー ***.scss
+ |      | ー 10_common
+ |                | ー _footer.scss
+ |                | ー _header.scss
+ |      | ー 20_component
+ |                | ー ***.scss
+ |                | ー ***.scss
+ |                | ー ***.scss
