@@ -135,7 +135,7 @@ $util-link-height-sp: $util-link-height-pc;
 $util-link-border-size: 3px;
 .util {
 	// 共通リンクボタン
-	&__link {
+	&-link {
 		width: $util-link-width-pc;
 		height: $util-link-height-pc;
 		margin: 0 auto;
@@ -168,7 +168,7 @@ $util-link-border-size: 3px;
 	}
 
 	// フローティングアイテム
-	&__floating {
+	&-floating {
 		opacity: 0;
 		position: fixed;
 		right: 30px;
