@@ -24,7 +24,7 @@ const uglify = $.composer($.uglifyes, $.composer); // JS圧縮
 // パス
 const path = {
 	src: './src', // 編集先
-	dist: './dist', // 出力先
+	dist: './assets', // 出力先
 };
 
 
