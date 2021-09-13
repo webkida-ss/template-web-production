@@ -124,6 +124,30 @@
 	}
 }
 
+// ------------------------------------------------------------
+// paddingクラス
+// ------------------------------------------------------------
+.p {
+	&t{
+		&-40{
+			padding-top: 40px;
+		}
+		&-60{
+			padding-top: 60px;
+		}
+	}
+	&b{
+		&-40{
+			padding-bottom: 40px;
+		}
+		&-60{
+			padding-bottom: 60px;
+		}
+		&-120{
+			padding-bottom: 120px;
+		}
+	}
+}
 
 // ------------------------------------------------------------
 // util
@@ -136,6 +160,7 @@ $util-link-border-size: 3px;
 .util {
 	// 共通リンクボタン
 	&-link {
+		cursor: pointer;
 		width: $util-link-width-pc;
 		height: $util-link-height-pc;
 		margin: 0 auto;
