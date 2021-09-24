@@ -115,6 +115,7 @@ add_action('init', 'disable_author_archive');
 /************************************************************************
  * ファイル取込み
  ************************************************************************/
+get_template_part('src-php/99_functions/_my_global_variables'); // グローバル変数
 get_template_part('src-php/99_functions/_filter-hook'); // フィルターフック
 get_template_part('src-php/99_functions/_short-code'); // ショートコード
 get_template_part('src-php/99_functions/_user-define'); // ユーザ定義関数
