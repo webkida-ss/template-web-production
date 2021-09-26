@@ -97,6 +97,61 @@ jQuery(function () {
 	});
 
 	/*********************************************
+	 * Geocording：住所からマップ作成
+	 * jQuery
+	 * Google Maps API
+	 *********************************************/
+	function draw_map(address) {
+		let geocoder = new google.maps.Geocoder();
+
+		// 住所から座標を取得する
+		geocoder.geocode({ // リクエスト
+				'address': address,
+				'region': 'jp'
+			},
+			// コールバック関数
+			function (results, status) {
+				if (status != google.maps.GeocoderStatus.OK) { // ステータスOK出ない場合は表示しない
+					return;
+				}
+
+				// Google Map 表示
+				function init_gmap() {
+					// 表示箇所
+					let map_tag = jQuery('#js-map')[0];
+
+					// 取得した座標を緯度経度にセット
+					let result_location = results[0].geometry.location;
+					let map_location = new google.maps.LatLng(result_location.lat(), result_location.lng());
+
+					// マップ表示オプション
+					let map_options = {
+						zoom: 15, // 縮尺
+						center: map_location, // 地図の中心座標
+						disableDefaultUI: true, // falseにすると地図上に人みたいなアイコンとか表示される
+						mapTypeId: google.maps.MapTypeId.ROADMAP // 地図の種類を指定
+					};
+
+					// マップ表示
+					let map = new google.maps.Map(map_tag, map_options);
+
+					// 地図上にマーカー（ピン留め）を表示させる
+					new google.maps.Marker({
+						position: map_location, // マーカーを表示させる座標
+						map: map // マーカーを表示させる地図
+					});
+				}
+
+				// 画面ロード時に表示
+				google.maps.event.addDomListener(window, 'load', init_gmap);
+			}
+		);
+	}
+	// 住所取得して関数呼び出し
+	let address = jQuery('#js-address').text();
+	draw_map(address);
+
+	/*********************************************
 	 * フォームバリデーション
 	 *********************************************/
 	let formName = jQuery('#name'),
