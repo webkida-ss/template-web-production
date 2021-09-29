@@ -95,7 +95,7 @@ add_action('wp_enqueue_scripts', function () {
 	// $geocode_api_key = '***'; // APIキー
 	// $geocode_url = 'https://maps.google.com/maps/api/js?key=' . $geocode_api_key;
 	// wp_enqueue_script('googlemapsapi', $geocode_url, array('jquery'), '1.0.0', true);
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), '3.4.1');
+	// wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), '3.4.1');
 	wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.min.js', array('jquery'), '1.0.0', true);
 });
 
