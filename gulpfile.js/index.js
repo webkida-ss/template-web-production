@@ -113,7 +113,8 @@ function css() {
 
 // JavaScript =============================================================================
 function js() {
-	return src(`${path.src}/js/**/*.js`, {
+	// return src(`${path.src}/js/**/*.js`, {
+	return src(`${path.src}/js/script.js`, { // ライブラリはminify化しない(個別に読み込み)
 			sourcemaps: true
 		})
 		.pipe(
