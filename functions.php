@@ -104,16 +104,17 @@ add_action('wp_enqueue_scripts', function () {
  * author_rewrite_rules：投稿者アーカイブページのリライトルール
  * __return_empty_array：空の配列を返す
  ************************************************************************/
-add_filter('author_rewrite_rules', '__return_empty_array');
-function disable_author_archive()
+// 投稿者アーカイブを無効化
+function disable_author_archive($query)
 {
-	// 404へむりやりリダイレクト
-	if ($_GET['author'] || preg_match('#/author/.+#', $_SERVER['REQUEST_URI'])) {
-		wp_redirect(home_url('/404.php'));
-		exit;
+	if (!is_admin() && is_author()) {
+		$query->set_404();
+		status_header(404);
+		nocache_headers();
 	}
 }
-add_action('init', 'disable_author_archive');
+add_action('parse_query', 'disable_author_archive');
+
 
 
 /************************************************************************
