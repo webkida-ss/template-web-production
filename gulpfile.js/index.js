@@ -32,8 +32,8 @@ const path = {
  * タスク定義
  ********************************************************************************************/
 
-// HTML =====================================================================================
-function html() {
+// Pug =====================================================================================
+function pug() {
 	return src([`${path.src}/pug/*.pug`, `!${path.src}/pug/**/_*.pug`]) // 対象pugファイル
 		.pipe(
 			$.plumber({ // エラーのデスクトップ通知
@@ -192,7 +192,7 @@ function bs() {
 // ========================================================================================
 // タスクの定義
 exports.php = php;
-exports.html = html;
+exports.pug = pug;
 exports.scss = scss; // gulp scss
 exports.css = css;
 exports.js = js;
@@ -202,8 +202,8 @@ exports.img = img;
 // exports.pug_formatter = pug_formatter;
 
 // 全てをwatchモードで起動
-exports.default = parallel([html, scss, css, js, js_library, img, bs], () => {
-	watch(`${path.src}/pug/**`, html);
+exports.default = parallel([pug, scss, css, js, js_library, img, bs], () => {
+	watch(`${path.src}/pug/**`, pug);
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/css/**`, css);
 	watch(`${path.src}/js/**`, js);
