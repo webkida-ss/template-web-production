@@ -1,7 +1,7 @@
 scss 
  | ー style.scss：各scssをインポート
  | 
- | ー config：
+ | ー 10_config：
  |      | ー _common.scss      ：共通処理を記載
  |      | ー _function.scss    ：関数
  |      | ー _initialize.scss  ：初期化（reset）
@@ -9,7 +9,7 @@ scss
  |      | ー _placeholder.scss ：継承用クラス
  |      | ー _setting.scss     ：定数定義
  | 
- | ー parts
+ | ー 10_parts
  |      | ー 00_template
  |                | ー ***.scss
  |                | ー ***.scss
