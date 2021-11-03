@@ -2,21 +2,36 @@
 <html lang="ja">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<%- include('./10_common/_head') %>
+	<title>タイトルタイトル</title>
 </head>
 
 
 <body>
 
 	<%# グローバル変数読み込み %>
-	<%- include('./00_config/_variables') %>
+	<%- include('./00_config/_variable') %>
+
+	<div class="wrapper">
+
+		<!-- ヘッダー -->
+		<%- include('./10_common/_header') %>
+
+		<div class="container">
+
+			<main class="main">
+			</main>
+
+			<aside class="aside">
+			</aside>
+
+		</div><!-- /.container -->
+
+		<!-- フッター -->
+		<%- include('./10_common/_footer') %>
 
 
-
-
+	</div><!-- /.wrapper -->
 </body>
 
 </html>
