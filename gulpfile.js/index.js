@@ -54,6 +54,24 @@ function pug() {
 		);
 }
 
+// EJS =====================================================================================
+function ejs() {
+	return src([`${path.src}/ejs/*.ejs`, `!${path.src}/pug/**/_*.ejs`]) // 対象EJSファイル
+		.pipe($.ejs({}, {}, {
+			ext: ".html" // htmlにコンパイル
+		}))
+		.pipe($.rename({
+			extname: ".html" //拡張子を.htmlにリネーム
+		}))
+		.pipe(dest(path.dist)) // 出力先
+		.pipe(
+			$.browserSync.reload({ // ブラウザ即時反映
+				stream: true,
+				once: true,
+			})
+		);
+}
+
 // PHP =====================================================================================
 function php() {
 	return src([`./**/*.php`]) // 対象phpファイル
@@ -192,6 +210,7 @@ function bs() {
 // ========================================================================================
 // タスクの定義
 exports.php = php;
+exports.ejs = ejs;
 exports.pug = pug;
 exports.scss = scss; // gulp scss
 exports.css = css;
@@ -201,8 +220,25 @@ exports.bs = bs;
 exports.img = img;
 // exports.pug_formatter = pug_formatter;
 
-// 全てをwatchモードで起動
-exports.default = parallel([pug, scss, css, js, js_library, img, bs], () => {
+// デフォルト
+exports.default = parallel([scss, img, bs], () => {
+	watch(`${path.src}/scss/**`, scss);
+	watch(`${path.src}/img/**`, img);
+});
+
+
+// WP版
+exports.wp = parallel([php, scss, css, js, js_library, img, bs], () => {
+	watch(`./**/*.php`, php);
+	watch(`${path.src}/scss/**`, scss);
+	watch(`${path.src}/css/**`, css);
+	watch(`${path.src}/js/**`, js);
+	watch(`${path.src}/js/**`, js_library);
+	watch(`${path.src}/img/**`, img);
+});
+
+// Pug版
+exports.pg = parallel([pug, scss, css, js, js_library, img, bs], () => {
 	watch(`${path.src}/pug/**`, pug);
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/css/**`, css);
@@ -212,14 +248,9 @@ exports.default = parallel([pug, scss, css, js, js_library, img, bs], () => {
 	// watch(`${path.src}/pug/**`, pug_formatter);
 });
 
-// scssをwatchモードで起動
-exports.scss_watch = parallel([scss], () => {
-	watch(`${path.src}/scss/**`, scss);
-});
-
-// WP版
-exports.wp = parallel([php, scss, css, js, js_library, img, bs], () => {
-	watch(`./**/*.php`, php);
+// EJS版
+exports.ejs = parallel([ejs, scss, css, js, js_library, img, bs], () => {
+	watch(`${path.src}/ejs/**`, ejs);
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/css/**`, css);
 	watch(`${path.src}/js/**`, js);

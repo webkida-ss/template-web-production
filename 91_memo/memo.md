@@ -41,6 +41,12 @@ https://csscomb.herokuapp.com/config
 - gulp-html-beautify：gulp化してない
 - gulp-pug-beautify：gulp化してない
 
+## 2021/11/02 インストール
+### [npm i -g]
+- gulp-ejs
+
+
+
 ## リンク
 - plumber、notify <br>
 　https://dev.classmethod.jp/articles/gulp-solo-adv-cal-06/
