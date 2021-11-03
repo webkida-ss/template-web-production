@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<div class="wrapper front-page">
+	<div class="wrapper fp">
 
 		<!-------------------------------------------------- 
 		- ヘッダー
@@ -23,7 +23,7 @@
 			- メイン
 			---------------------------->
 			<main class="main">
-				<section class="front-page__top">
+				<section class="fp__top">
 					<?php get_template_part('src-php/20_component/01_top/_top'); ?>
 				</section>
 			</main>

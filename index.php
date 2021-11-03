@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper idx">
 
 		<!-------------------------------------------------- 
 		- ヘッダー
