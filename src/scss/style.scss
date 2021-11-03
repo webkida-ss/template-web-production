@@ -1,18 +1,17 @@
 @charset 'UTF-8';
 
-// config
-@import 'config/_setting';// 基本設定
-@import 'config/_mixin';// ミックスイン
-@import 'config/_function';// ファンクション
-@import 'config/_placeholder';// プレースホルダー
-@import 'config/_initialize';// 初期化
-@import 'config/_common';// 共通系
+// 00_config
+@import '00_config/_setting';// 基本設定
+@import '00_config/_mixin';// ミックスイン
+@import '00_config/_function';// ファンクション
+@import '00_config/_placeholder';// プレースホルダー
+@import '00_config/_initialize';// 初期化
+@import '00_config/_common';// 共通系
 
-// parts/common：共通
-@import 'parts/10_common/_header';// ヘッダー
-@import 'parts/10_common/_footer';// フッター
+// 10_parts/common：共通
+@import '10_parts/10_common/_header';// ヘッダー
+@import '10_parts/10_common/_footer';// フッター
 
-// parts
-@import 'parts/_';// 
-@import 'parts/_access';// アクセス
-@import 'parts/_contact';// お問い合わせ
+// 10_parts
+@import '10_parts/_access';// アクセス
+@import '10_parts/_contact';// お問い合わせ

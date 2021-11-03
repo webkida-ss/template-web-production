@@ -1,32 +1,32 @@
 @charset 'UTF-8';
 
-// config
-@import 'config/_setting';// 基本設定
-@import 'config/_mixin';// ミックスイン
-@import 'config/_function';// ファンクション
-@import 'config/_placeholder';// プレースホルダー
-@import 'config/_initialize';// 初期化
-@import 'config/_common';// 共通系
+// 00_config
+@import '00_config/_setting';// 基本設定
+@import '00_config/_mixin';// ミックスイン
+@import '00_config/_function';// ファンクション
+@import '00_config/_placeholder';// プレースホルダー
+@import '00_config/_initialize';// 初期化
+@import '00_config/_common';// 共通系
 
 // WPテンプレート ----------------------------------------------
-@import 'parts/00_template/_page-sitemap';
-@import 'parts/00_template/_sidebar';
-@import 'parts/00_template/_not-found';
-@import 'parts/00_template/_front-page';
+@import '10_parts/00_template/_page-sitemap';
+@import '10_parts/00_template/_sidebar';
+@import '10_parts/00_template/_not-found';
+@import '10_parts/00_template/_front-page';
 
 
 // 共通系 -----------------------------------------------------
-@import 'parts/10_common/_header';// ヘッダー
-@import 'parts/10_common/_footer';// フッター
+@import '10_parts/10_common/_header';// ヘッダー
+@import '10_parts/10_common/_footer';// フッター
 
 
 // 部品系 ------------------------------------------------------
 
 // トップページ
-@import 'parts/20_component/01_top/_top';
+@import '10_parts/20_component/01_top/_top';
 
 // お問い合わせ
-@import 'parts/20_component/02_contact/_contact';
+@import '10_parts/20_component/02_contact/_contact';
 
 // ニュース
-@import 'parts/20_component/03_news/_news';
+@import '10_parts/20_component/03_news/_news';
