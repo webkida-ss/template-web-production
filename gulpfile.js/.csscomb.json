@@ -22,6 +22,10 @@
     "vendor-prefix-align": true,
     "sort-order": [
         [
+            "$variable",
+            "$import",
+            "$extend",
+            "$include",
             "display",
             "flex",
             "flex-grow",
