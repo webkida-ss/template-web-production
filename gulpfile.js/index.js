@@ -56,7 +56,7 @@ function pug() {
 
 // EJS =====================================================================================
 function ejs() {
-	return src([`${path.src}/ejs/*.ejs`, `!${path.src}/pug/**/_*.ejs`]) // 対象EJSファイル
+	return src([`${path.src}/ejs/*.ejs`, `!${path.src}/ejs/**/_*.ejs`]) // 対象EJSファイル
 		.pipe($.ejs({}, {}, {
 			ext: ".html" // htmlにコンパイル
 		}))
