@@ -32,28 +32,6 @@ const path = {
  * タスク定義
  ********************************************************************************************/
 
-// Pug =====================================================================================
-function pug() {
-	return src([`${path.src}/pug/*.pug`, `!${path.src}/pug/**/_*.pug`]) // 対象pugファイル
-		.pipe(
-			$.plumber({ // エラーのデスクトップ通知
-				errorHandler: $.notify.onError('Error: <%= error.message %>'),
-			})
-		)
-		.pipe(
-			$.pug({
-				pretty: true, // 整形ツール？
-			})
-		)
-		.pipe(dest(path.dist)) // 出力先
-		.pipe(
-			$.browserSync.reload({ // ブラウザ即時反映
-				stream: true,
-				once: true,
-			})
-		);
-}
-
 // EJS =====================================================================================
 function ejs() {
 	return src([`${path.src}/ejs/*.ejs`, `!${path.src}/ejs/**/_*.ejs`]) // 対象EJSファイル
@@ -190,35 +168,17 @@ function bs() {
 	});
 }
 
-// Pugフォーマット ==========================================================================
-// Pug：VSCodeのフォーマッタにて管理のため、不使用
-// function pug_formatter() {
-// 	const option = {}
-// 	return src([`${path.src}/pug/*.pug`, `${path.src}/pug/**/_*.pug`]) // 対象pugファイル
-// 		.pipe(
-// 			$.plumber({ // エラーのデスクトップ通知
-// 				errorHandler: $.notify.onError('Error: <%= error.message %>'),
-// 			})
-// 		)
-// 		.pipe(
-// 			$.pugBeautify(option)
-// 		)
-// 		.pipe(dest(`${path.src}/pug`)) // 出力先
-// 	;
-// }
 
 // ========================================================================================
 // タスクの定義
 exports.php = php;
 exports.ejs = ejs;
-exports.pug = pug;
 exports.scss = scss; // gulp scss
 exports.css = css;
 exports.js = js;
 exports.js_library = js_library;
 exports.bs = bs;
 exports.img = img;
-// exports.pug_formatter = pug_formatter;
 
 // デフォルト
 exports.default = parallel([scss, img, bs], () => {
@@ -235,17 +195,6 @@ exports.wp = parallel([php, scss, css, js, js_library, img, bs], () => {
 	watch(`${path.src}/js/**`, js);
 	watch(`${path.src}/js/**`, js_library);
 	watch(`${path.src}/img/**`, img);
-});
-
-// Pug版
-exports.pg = parallel([pug, scss, css, js, js_library, img, bs], () => {
-	watch(`${path.src}/pug/**`, pug);
-	watch(`${path.src}/scss/**`, scss);
-	watch(`${path.src}/css/**`, css);
-	watch(`${path.src}/js/**`, js);
-	watch(`${path.src}/js/**`, js_library);
-	watch(`${path.src}/img/**`, img);
-	// watch(`${path.src}/pug/**`, pug_formatter);
 });
 
 // EJS版
