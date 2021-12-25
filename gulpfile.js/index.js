@@ -1,22 +1,9 @@
-/********************************************************************************************
- * localhost:3000
- * 　HTMLの場合：proxyを有効化せず、serverを有効化
- * 　WordPressの場合：serverを有効化せず、proxyにローカルホストを指定（adminのポートも3000になる）
- * 
- * phpファイルはdistではなく、直下に格納
- ********************************************************************************************/
-
-/********************************************************************************************
- * 事前準備
- * sass-comb/watch-combを使用するには、本ファイルと同階層に .csscomb.jsonが必要
- ********************************************************************************************/
-
 // 変数宣言
 const {
-	src, // gulpからsrcをインポート
-	dest, // gulpからdistをインポート
-	parallel, // gulpからparallelをインポート
-	watch, // gulpからwatchをインポート
+	src,
+	dest,
+	parallel,
+	watch,
 } = require('gulp');
 const $ = require('./modules.js'); // 分離したmodulesをインポート
 const uglify = $.composer($.uglifyes, $.composer); // JS圧縮
@@ -84,7 +71,6 @@ function scss() {
 			$.autoprefixer(browser_list) // ベンダープレフィックス
 		]))
 		.pipe($.csscomb())
-		// .pipe($.autoprefixer()) // ベンダープレフィックス
 		.pipe($.sourcemaps.write()) // ソースマップ
 		.pipe(dest(`${path.dist}/css`)) // 出力先
 		.pipe(
@@ -101,6 +87,7 @@ function scss() {
 			})
 		);
 }
+
 // css：minify化なし
 function css() {
 	return src(`${path.src}/css/*.css`) // 対象cssファイル
@@ -138,6 +125,7 @@ function js() {
 			})
 		);
 }
+
 // jsライブラリ：minify化なし
 function js_library() {
 	return src(`${path.src}/js/lib/*.js`)
@@ -162,7 +150,7 @@ function bs() {
 		server: {
 			baseDir: path.dist,
 		},
-		//proxy: 'http://localhost:10004/', // Local by Flywheelのドメイン
+		//proxy: 'http://localhost:10000/', // ローカルサーバのドメイン
 		notify: true,
 		xip: false,
 	});
@@ -173,7 +161,7 @@ function bs() {
 // タスクの定義
 exports.php = php;
 exports.ejs = ejs;
-exports.scss = scss; // gulp scss
+exports.scss = scss;
 exports.css = css;
 exports.js = js;
 exports.js_library = js_library;
