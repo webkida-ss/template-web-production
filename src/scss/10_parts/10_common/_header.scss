@@ -17,7 +17,7 @@
 		// ロゴなら
 		width: 100px;
 		height: 100px;
-		transition: opacity $transition-change-time ease 0s;
+		transition: opacity $change-time ease 0s;
 		img {
 			width: 100%;
 			height: 100%;
@@ -40,7 +40,7 @@
 	// ------------------------------------------------------------
 	&__nav {
 		margin-left: auto;// ナビゲーションを右寄せ
-		transition: all $transition-change-time ease 0s;
+		transition: all $change-time ease 0s;
 
 		@include mq(sp) {
 			position: fixed;// ドロワーメニュー位置固定
@@ -98,7 +98,7 @@
 				height: 2px;
 				content: '';
 				// opacity: 0;// opacity方式でも可能
-				transition: transform $transition-change-time ease 0s;
+				transition: transform $change-time ease 0s;
 
 				border-bottom: 2px solid $dark-gray;
 			}
@@ -121,7 +121,7 @@
 		right: $padding-sp;
 		z-index: map-get($layer, drawer);
 		background: transparent;
-		transition: all $transition-change-time ease 0s;
+		transition: all $change-time ease 0s;
 
 		@include mq(sp) { // スマホのみ表示
 			// 配下のbarsを上下中央揃え
@@ -187,7 +187,7 @@
 		width: 100%;
 		height: 100%;
 		background: $black;
-		transition: all $transition-change-time ease 0s;
+		transition: all $change-time ease 0s;
 		&.is-checked {
 			display: block;
 			opacity: .5;

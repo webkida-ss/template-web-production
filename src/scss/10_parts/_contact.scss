@@ -117,7 +117,7 @@
 					display: block;
 					position: absolute;
 					content: '';
-					transition: all $transition-change-time ease 0s;
+					transition: all $change-time ease 0s;
 				}
 				// カスタムチェックボックス（外枠）
 				&::before {
@@ -183,7 +183,7 @@
 					position: absolute;
 					border-radius: 50%;
 					content: '';
-					transition: all $transition-change-time ease 0s;
+					transition: all $change-time ease 0s;
 				}
 				// カスタムボタン（外◯）
 				&::before {

@@ -166,7 +166,7 @@ $util-link-border-size: 3px;
 			border-width: $util-link-border-size;
 			border-style: solid;
 			border-color: $black;
-			transition: all $transition-change-time ease 0s;
+			transition: all $change-time ease 0s;
 			&:hover {
 				border-color: $white;
 				background: $black;
