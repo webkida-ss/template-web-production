@@ -14,15 +14,15 @@
 	height: inherit;// 高さは親を継承
 	margin: 0 auto;
 
-	@include mq(tab-only) {
-		width: $layout-width-inner-tab;
-	}
-	@include mq(sp) {
+	// @include mq(tab-only) {
+	// 	width: $layout-width-inner-tab;
+	// }
+	// @include mq(sp) {
 		// width: auto;
 		// width: ($layout-width-inner-sp / $layout-width-canvas-sp) * 100% ;
-		width: $layout-width-inner-sp;
+		// width: $layout-width-inner-sp;
 		// margin: 0 *px;// 固定マージン
-	}
+	// }
 }
 
 // ------------------------------------------------------------
