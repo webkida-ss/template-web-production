@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-// 00_config
+// コンフィグ ========================================================
 @import '00_config/_setting';// 基本設定
 @import '00_config/_mixin';// ミックスイン
 @import '00_config/_function';// ファンクション
@@ -8,10 +8,22 @@
 @import '00_config/_initialize';// 初期化
 @import '00_config/_common';// 共通系
 
-// 10_parts/common：共通
-@import '10_parts/10_common/_header';// ヘッダー
-@import '10_parts/10_common/_footer';// フッター
+// パーツ ===========================================================
 
-// 10_parts
-// @import '10_parts/_access';// アクセス
-// @import '10_parts/_contact';// お問い合わせ
+// WPテンプレート ----------------------------------------------
+// @import '10_parts/00_template/_pg-sitemap';
+// @import '10_parts/00_template/_sb';
+// @import '10_parts/00_template/_nf';
+// @import '10_parts/00_template/_fp';
+
+// レイアウト --------------------------------------------------
+@import '10_parts/10_layout/_header';// ヘッダー
+@import '10_parts/10_layout/_footer';// フッター
+
+
+// 部品系 ------------------------------------------------------
+
+// トップページ
+// @import '10_parts/20_component/01_top/';
+// お問い合わせ
+// @import '10_parts/20_component/02_contact/';
