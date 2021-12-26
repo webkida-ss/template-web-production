@@ -100,7 +100,7 @@
 				// opacity: 0;// opacity方式でも可能
 				transition: transform $change-time ease 0s;
 
-				border-bottom: 2px solid $dark-gray;
+				border-bottom: 2px solid $black;
 			}
 			&:hover {
 				&::after {
