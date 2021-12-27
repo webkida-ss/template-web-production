@@ -40,4 +40,13 @@ jQuery(function () {
 		}
 	});
 
+	/*********************************************
+	 * スクロールトップ
+	 *********************************************/
+	jQuery('.js-scroll-top').click(function () {
+		jQuery('body, html').animate({
+			scrollTop: 0
+		}, 500, 'swing');
+		return false;
+	});
 })
