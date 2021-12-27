@@ -28,22 +28,25 @@
 // ------------------------------------------------------------
 // ページタイトル
 // ------------------------------------------------------------
-.page-title{
-	
+.page- {
+	&-title {
+		// 
+	}
 }
 
 // ------------------------------------------------------------
 // セクションタイトル
 // ------------------------------------------------------------
-.section-title {
+.section {
 
-	font-weight: $font-weight-bold;
-	// font-size: *rem;
-	font-family: $font-family-english;// 英語の場合
-	text-align: center;
-
-	@include mq(sp) {
+	&-title {
+		@include mq(sp) {
+			// font-size: *rem;
+		}
+		font-weight: $font-weight-bold;
 		// font-size: *rem;
+		font-family: $font-family-english;// 英語の場合
+		text-align: center;
 	}
 }
 
