@@ -55,6 +55,9 @@ $font-weight-bold: 600;
 $line-height-base: 1;// 基本設定
 $line-height-pra-base: 1.6;// 文章の場合の基本設定
 $font-size-base: 1.6rem; // 基準サイズ（フォントサイズ）
+$font-size-vw-pc: (1000vw/1440);
+$font-size-vw-tab: (1000vw/768);
+$font-size-vw-sp: (1000vw/375);
 
 // ブレイクポイント
 $max-width-sp: 559;
