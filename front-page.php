@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<div class="wrapper fp">
+	<div class="l-wrapper p-top">
 
 		<!-------------------------------------------------- 
 		- ヘッダー
@@ -17,13 +17,13 @@
 		<!-------------------------------------------------- 
 		- メイン|サイドバー
 		---------------------------------------------------->
-		<div class="container">
+		<div class="l-container">
 
 			<!-------------------------- 
 			- メイン
 			---------------------------->
-			<main class="main">
-				<section class="fp__top">
+			<main class="l-main">
+				<section class="p-top__">
 					<?php get_template_part('src-php/20_component/01_top/_top'); ?>
 				</section>
 			</main>
@@ -35,7 +35,7 @@
 				<?php get_sidebar(); ?>
 			</aside>
 
-		</div><!-- /.container -->
+		</div><!-- /.l-container -->
 
 		<!-------------------------------------------------- 
 		- フッター
