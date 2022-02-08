@@ -1,11 +1,12 @@
-.contact {
+// お問い合わせ
+.p-contact {
 	@extend %section-padding;
 	&__inner {
 		// width:(*px / $layout-width-canvas-pc) * 100%;
 		// padding: 0 *px 0 *px;
 		// @include mq(tab) {
-			// width:(*px / $layout-width-canvas-tab) * 100%;
-			// padding: 0 *px 0 *px;
+		// width:(*px / $layout-width-canvas-tab) * 100%;
+		// padding: 0 *px 0 *px;
 		// }
 		@include mq(sp) {
 			// width:(*px / $layout-width-canvas-sp) * 100%;
@@ -54,8 +55,8 @@
 				width: 100%;
 				&:hover,
 				&:focus {
-					border: 1px solid $blue-active;
-					box-shadow: 0px 0px 5px 0px $blue-active;
+					// border: 1px solid ;
+					// box-shadow: 0px 0px 5px 0px ;
 					outline: none;
 				}
 			}
@@ -90,8 +91,8 @@
 				&:hover {
 					& + label {
 						&::before {
-							border: 1px solid $blue-active;
-							box-shadow: 0px 0px 5px 0px $blue-active;
+							// border: 1px solid ;
+							// box-shadow: 0px 0px 5px 0px ;
 						}
 					}
 				}
@@ -156,8 +157,8 @@
 				&:hover {
 					& + label {
 						&::before {
-							border: 1px solid $blue-active;
-							box-shadow: 0px 0px 5px 0px $blue-active;
+							border: 1px solid ;
+							box-shadow: 0px 0px 5px 0px ;
 						}
 					}
 				}
@@ -232,13 +233,13 @@
 		&.is-remark {
 			// 
 		}
-        &.is-privacy-check{
-            // 
-        }
+		&.is-privacy-check {
+			// 
+		}
 	}
 
-    // 送信ボタン
-    &__submit{
-        // 
-    }
+	// 送信ボタン
+	&__submit {
+		// 
+	}
 }

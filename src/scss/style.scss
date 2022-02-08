@@ -1,29 +1,62 @@
 @charset 'UTF-8';
 
-// コンフィグ ========================================================
-@import '00_config/_setting';// 基本設定
-@import '00_config/_mixin';// ミックスイン
-@import '00_config/_function';// ファンクション
-@import '00_config/_placeholder';// プレースホルダー
-@import '00_config/_initialize';// 初期化
-@import '00_config/_common';// 共通系
+// ==========================================================================
+// Foundation
+// ==========================================================================
 
-// パーツ ===========================================================
+@import 'foundation/_reset';// リセットCSS
+@import 'foundation/_base';// 基本設定
+@import 'foundation/_mixin';// ミックスイン
+@import 'foundation/_function';// ファンクション
+@import 'foundation/_placeholder';// プレースホルダー
+@import 'foundation/_initialize';// 初期化
 
-// WPテンプレート ----------------------------------------------
-// @import '10_parts/00_template/_pg-sitemap';
-// @import '10_parts/00_template/_sb';
-// @import '10_parts/00_template/_nf';
-// @import '10_parts/00_template/_fp';
+// ==========================================================================
+// Layout
+// ==========================================================================
 
-// 共通系 --------------------------------------------------
-@import '10_parts/10_common/_header';// ヘッダー
-@import '10_parts/10_common/_footer';// フッター
+@import 'layout/_wrapper'; // ラッパー
+@import 'layout/_container'; // コンテナー
+@import 'layout/_main'; // メイン
+@import 'layout/_aside'; // アサイド
+@import 'layout/_header';// ヘッダー
+@import 'layout/_footer';// フッター
+@import 'layout/_sidebar';// サイドバー
 
 
-// 部品系 ------------------------------------------------------
+// ==========================================================================
+// Object
+// ==========================================================================
 
-// トップページ
-// @import '10_parts/20_component/01_top/';
-// お問い合わせ
-// @import '10_parts/20_component/02_contact/';
+// -----------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------
+
+
+@import 'object/component/_inner'; // インナー
+@import 'object/component/_page'; // ページ
+@import 'object/component/_section'; // セクション
+@import 'object/component/_display'; // 表示
+@import 'object/component/_hidden'; // 非表示
+@import 'object/component/_button'; // ボタン
+@import 'object/component/_floating'; // フローティングアイテム
+@import 'object/component/_breadcrumb'; // パンくずリスト
+
+
+// -----------------------------------------------------------------
+// Project
+// -----------------------------------------------------------------
+
+@import 'object/project/_sitemap'; // サイトマップ
+
+@import 'object/project/_top'; // トップページ
+@import 'object/project/_contact'; // お問い合わせ
+
+
+// -----------------------------------------------------------------
+// Utility
+// -----------------------------------------------------------------
+
+@import 'object/utility/_font'; // フォント
+@import 'object/utility/_margin'; // マージン
+@import 'object/utility/_padding'; // パディング

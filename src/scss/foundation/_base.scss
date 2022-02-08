@@ -59,6 +59,12 @@ $font-size-vw-pc: (1000vw/1440);
 $font-size-vw-tab: (1000vw/768);
 $font-size-vw-sp: (1000vw/375);
 
+// レイアウト調整
+$sidebar-width-pc: 200px;
+$sidebar-width-tab: 150px;
+$sidebar-width-sp: 100px;
+$container-margin-pc: 20px;
+
 // ブレイクポイント
 $max-width-sp: 559;
 $max-width-tab: 959;

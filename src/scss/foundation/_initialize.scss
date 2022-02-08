@@ -67,6 +67,13 @@ a {
 	}
 }
 
+input,textarea{
+	&:hover,
+	&:focus {
+		outline: none;
+	}
+}
+
 textarea{
 	// 下に余計な空白ができるのを防止
 	display: block;
