@@ -4,7 +4,7 @@
 .c-display-only {
 	// PCだけ表示
 	&-pc {
-		@include mq(tab) {
+		@include mq(tab-only) {
 			display: none;
 		}
 		@include mq(sp) {
@@ -25,7 +25,7 @@
 		@include mq(pc) {
 			display: none;
 		}
-		@include mq(tab) {
+		@include mq(tab-only) {
 			display: none;
 		}
 	}
