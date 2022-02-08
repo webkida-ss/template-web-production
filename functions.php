@@ -82,20 +82,6 @@ function disable_author_archive($query)
 add_action('parse_query', 'disable_author_archive');
 
 
-/************************************************************************
- * W3C対策
- * text/javascript削除
- * text/css削除
- ************************************************************************/
-add_action('template_redirect', function () {
-	ob_start(function ($buffer) {
-		$buffer = str_replace(array('type="text/javascript"', "type='text/javascript'"), '', $buffer);
-		$buffer = str_replace(array('type="text/css"', "type='text/css'"), '', $buffer);
-		return $buffer;
-	});
-});
-
-
 
 /************************************************************************
  * ファイル取込み
@@ -104,3 +90,4 @@ get_template_part('src-php/99_functions/_my-global-variables'); // グローバ�
 get_template_part('src-php/99_functions/_filter-hook'); // フィルターフック
 get_template_part('src-php/99_functions/_short-code'); // ショートコード
 get_template_part('src-php/99_functions/_user-define'); // ユーザ定義関数
+get_template_part('src-php/99_functions/_W3C'); // W3C対策
