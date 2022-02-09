@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<div class="l-wrapper p-top">
+	<div class="l-wrapper">
 
 		<!-------------------------------------------------- 
 		- ヘッダー
@@ -22,7 +22,7 @@
 			<!-------------------------- 
 			- メイン
 			---------------------------->
-			<main class="l-main">
+			<main class="l-main p-top">
 				<section class="p-top__">
 					<?php get_template_part('src-php/20_component/01_top/_top'); ?>
 				</section>

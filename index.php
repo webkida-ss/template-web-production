@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<div class="l-wrapper p-idx">
+	<div class="l-wrapper">
 
 		<!-------------------------------------------------- 
 		- ヘッダー
@@ -22,7 +22,7 @@
 			<!-------------------------- 
 			- メイン
 			---------------------------->
-			<main class="l-main">
+			<main class="l-main p-idx">
 				<!-- ショートコード出力 -->
 				<?php echo do_shortcode(''); ?>
 			</main>
