@@ -75,8 +75,8 @@ input,textarea{
 }
 
 textarea{
-	// 下に余計な空白ができるのを防止
-	display: block;
+	display: block;// 下に余計な空白ができるのを防止
+	resize: none;// リサイズなし
 }
 
 button, input, select, textarea {
