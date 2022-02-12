@@ -8,6 +8,16 @@ function getHogeHoge($param)
 	return $param;
 }
 
+/************************************************************************
+ * 3点リーダによる表示
+ ************************************************************************/
+function getThreePointReader($title)
+{
+	$max = 25;
+	return (mb_strlen($title) > $max) ? mb_substr($title, 0, $max) . '...' : $title;
+}
+
+
 /*****************************************************
  * 子ページ取得
  * 呼び出し元で wp_reset_postdata すること
