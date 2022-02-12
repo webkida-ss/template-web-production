@@ -6,6 +6,10 @@
 .c-inner {
 	width: $layout-width-inner-pc;
 	max-width: 100%;
-	height: inherit;
+	height: inherit;// 高さは親を継承
 	margin: 0 auto;
+
+	@include mq(sp) {
+		width: $layout-width-inner-sp;
+	}
 }

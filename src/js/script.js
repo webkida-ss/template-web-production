@@ -1,11 +1,6 @@
 jQuery(function () {
 
 	/*********************************************
-	 * WOW初期化
-	 *********************************************/
-	new WOW().init();
-
-	/*********************************************
 	 * スムーススクロール
 	 *********************************************/
 	jQuery('a[href^="#"]').click(function () {
@@ -49,4 +44,19 @@ jQuery(function () {
 		}, 500, 'swing');
 		return false;
 	});
+
+	/*********************************************
+	 * ふわっと表示
+	 *********************************************/
+	let fadeIn = jQuery(".c-fade-in");
+	jQuery(window).scroll(function () {
+		fadeIn.each(function () {
+			let offset = jQuery(this).offset().top;
+			let scroll = jQuery(window).scrollTop();
+			let windowHeight = jQuery(window).height();
+			if (scroll > offset - windowHeight + 150) {
+				jQuery(this).addClass("c-scroll-in");
+			}
+		});
+	})
 })

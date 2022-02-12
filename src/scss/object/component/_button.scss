@@ -7,8 +7,11 @@
 	font-weight: $font-weight-bold;
 	text-align: center;
 	cursor: pointer;
+	&:hover {
+		opacity: $hover-opacity;
+	}
 
-	span {
+	> span {
 		display: inline-block;
 		width: 100%;
 	}
