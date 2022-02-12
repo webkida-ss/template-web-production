@@ -25,6 +25,11 @@ html {
 }
 
 body {
+	// overflow-wrap: break-word;// ブラウザがテキストボックスに改行を入れる場合に文字の途中でも改行する
+	// word-break
+	@include mq(sp) {
+		padding-top: $header-height-sp;
+	}
 	padding-top: $header-height-pc;
 	overflow-x: hidden;// 横はみ出：隠す
 	background: $color-background-base;
@@ -36,11 +41,6 @@ body {
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	// overflow-wrap: break-word;// ブラウザがテキストボックスに改行を入れる場合に文字の途中でも改行する
-	// word-break
-	@include mq(sp) {
-		padding-top: $header-height-sp;
-	}
 }
 
 img {
@@ -67,38 +67,47 @@ a {
 	}
 }
 
-input,textarea{
+input[type='submit'],
+button {
+	cursor: pointer;
+	&:hover {
+		opacity: $hover-opacity;
+	}
+}
+
+input,
+textarea {
 	&:hover,
 	&:focus {
 		outline: none;
 	}
 }
 
-textarea{
+textarea {
 	display: block;// 下に余計な空白ができるのを防止
 	resize: none;// リサイズなし
 }
 
-button, input, select, textarea {
-	font-family: inherit;
+button,
+input,
+select,
+textarea {
 	font-size: 100%;
+	font-family: inherit;
 }
 
 // ================================================
 // WordPressネイティブクラス
 // ================================================
-.aligncenter{
+.aligncenter {
 	// display: block;
 	// margin: 0 auto;
 }
-.alignleft{
+.alignleft {
 	// margin: 10px;
 	// float: left; 
 }
-.alignright{
+.alignright {
 	// margin: 10px;
 	// float: right; 
-}
-.wp-caption{
-
 }
