@@ -5,7 +5,7 @@
 - gulp-postcss
 - css-mqpacker
 - autoprefixer
-- postcssgulp-csscomb
+- gulp-csscomb
 <br>
 ※ ksmt-trip-client、デイトラのpackage.jsonを参照すること
 
@@ -25,7 +25,7 @@ https://csscomb.herokuapp.com/config
 - gulp-pug
 - gulp-csso
 - gulp-concat
-- browser-sync、
+- browser-sync
 - gulp-plumber
 - gulp-notify
 - gulp-sourcemaps
