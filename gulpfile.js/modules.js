@@ -1,6 +1,6 @@
 module.exports = { // モジュールをエクスポート
 	pug: require('gulp-pug'),
-	sass: require('gulp-sass'),
+	sass: require('gulp-sass')(require('sass')),
 	minifyCSS: require('gulp-csso'), // CSS圧縮
 	concat: require('gulp-concat'), // 複数のファイルを結合
 	browserSync: require('browser-sync'), // ファイル変更監視ブラウザ反映：Live Server的な
