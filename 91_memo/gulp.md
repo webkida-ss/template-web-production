@@ -66,3 +66,8 @@ https://csscomb.herokuapp.com/config
 
 ## 追記
 postcssも必要
+
+
+## gulp-sass 5系
+かなり違いがある、特に割り算
+dart-sass
