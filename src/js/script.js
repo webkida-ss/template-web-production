@@ -46,7 +46,7 @@ jQuery(function () {
 		jQuery("." + targetClass).toggleClass("is-checked"); // for-drawerクラスがついてる要素をトグルでis-checked
 		return false;
 	});
-	// リンク選択時にドロワーを閉じる
+	// リンク選択時にドロワーを閉じる
 	jQuery('.js-drawer-item').on('click', function (e) {
 		let targetClass = drawerBtn.attr("data-target");
 		jQuery("." + targetClass).removeClass('is-checked');
