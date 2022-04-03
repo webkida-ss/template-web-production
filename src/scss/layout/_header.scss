@@ -1,5 +1,8 @@
 // ヘッダー
 .l-header {
+	@include mq(sp) {
+		height: $header-height-sp;
+	}
 	// ------------------------------------------------------------
 	// 固定する場合はfixかつ、bodyにpadding-topついてるかチェック
 	// ------------------------------------------------------------
@@ -9,24 +12,14 @@
 	z-index: map-get($layer,header);
 	width: 100%;
 	height: $header-height-pc;
-	// padding: *px 0;
-
-	@include mq(sp) {
-		height: $header-height-sp;
-	}
 	&__title {
 		// ロゴなら
 		width: 100px;
 		height: 100px;
 		transition: opacity $change-time ease 0s;
-		img {
+		> a, > img {
 			width: 100%;
 			height: 100%;
-		}
-
-		&:hover {
-			opacity: .6;
-			cursor: pointer;
 		}
 	}
 
@@ -40,9 +33,6 @@
 	// ドロワー開いている際はメニュー
 	// ------------------------------------------------------------
 	&__nav {
-		margin-left: auto;// ナビゲーションを右寄せ
-		transition: all $change-time ease 0s;
-
 		@include mq(sp) {
 			position: fixed;// ドロワーメニュー位置固定
 			top: 0;
@@ -58,35 +48,14 @@
 				transform: translateX(0%); // 元の位置に移動
 			}
 		}
+		margin-left: auto;// ナビゲーションを右寄せ
+		transition: all $change-time ease 0s;
 
 		&--list {
-			display: flex;// 横並び
-			justify-content: center;// 左右中央揃え
-			align-items: center;// 上下中央揃え
-			height: inherit;
-
-			@include mq(sp) {
-				display: block;
-			}
+			// 
 		}
 		&--item {
-			@include mq(tab-only) {
-				// font-size: rem;
-			}
-			@include mq(sp) {
-				// font-size: rem;
-				// margin-top: px;
-				text-align: center;
-			}
-			& + & {
-				// margin-left: *px;
-				@include mq(tab-only) {
-					// margin-left: *px;
-				}
-				@include mq(sp) {
-					// margin: 10px 0 0 0;
-				}
-			}
+			// 
 		}
 		&--link {
 			position: relative;
@@ -115,7 +84,15 @@
 	// ------------------------------------------------------------
 	// ドロワー
 	// ------------------------------------------------------------
-	&__drawer { // ドロワーボタン（ハンバーガメニュー）
+	&__drawer {
+		$header-drawer-bar-height: 4px;
+		$header-drawer-bar-margin: 4px;
+		@include mq(sp) { // スマホのみ表示
+			// 配下のbarsを上下中央揃え
+			display: flex;
+			align-items: center;
+			height: $header-height-sp;
+		} // ドロワーボタン（ハンバーガメニュー）
 		display: none;
 		position: fixed;
 		top: 0px;
@@ -123,15 +100,6 @@
 		z-index: map-get($layer, drawer);
 		background: transparent;
 		transition: all $change-time ease 0s;
-
-		@include mq(sp) { // スマホのみ表示
-			// 配下のbarsを上下中央揃え
-			display: flex;
-			align-items: center;
-			height: $header-height-sp;
-		}
-		$header-drawer-bar-height: 4px;
-		$header-drawer-bar-margin: 4px;
 
 		&.is-checked {
 			transform: translateX(-300px); // ボタンの位置を調整
