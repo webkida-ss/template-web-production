@@ -1,5 +1,5 @@
 <header class="l-header">
-	<div class="l-header__inner">
+	<div class="c-inner l-header__inner">
 
 		<!-- タイトル：ロゴ -->
 		<h1 class="l-header__title">
