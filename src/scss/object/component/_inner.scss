@@ -8,8 +8,10 @@
 	max-width: 100%;
 	height: inherit;// 高さは親を継承
 	margin: 0 auto;
+	padding: 0 10px;// 縮めたときに余白を持たす
 
 	@include mq(sp) {
+		padding: 0 5px;
 		width: $layout-width-inner-sp;
 	}
 }
