@@ -30,7 +30,12 @@ function scss() {
 		overrideBrowserslist: ["last 2 versions", "ie >= 11"]
 	}; // ベンダープレフィックス
 
-	return src("./src/scss/**/*.scss")
+	return src(`${path.src}/scss/*.scss`) // 対象scssファイル
+		.pipe(
+			$.plumber({ // エラーをデスクトップ通知
+				errorHandler: $.notify.onError('Error: <%= error.message %>'),
+			})
+		)
 		.pipe($.sourcemaps.init())
 		.pipe(sass.sync(output_style))
 		.pipe($.postcss([
