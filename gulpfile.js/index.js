@@ -21,6 +21,13 @@ const path = {
 
 // scss ====================================================================================
 function scss() {
+	// 設定
+	const output_style = {
+		outputStyle: 'expanded'
+	}; // 出力形式
+	const browser_list = {
+		overrideBrowserslist: ["last 2 versions", "ie >= 11"]
+	}; // ベンダープレフィックス
 
 	return src("./src/scss/**/*.scss")
 		.pipe(sass.sync({
