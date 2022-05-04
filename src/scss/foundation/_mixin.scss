@@ -1,3 +1,4 @@
+@use "base";
 // --------------------------------------------------
 // ミックスイン
 // --------------------------------------------------
@@ -5,7 +6,7 @@
 
 // メディアクエリ
 @mixin mq($breakpoint) {
-	@media #{map-get($breakpoints,$breakpoint)} {
+	@media #{map-get(base.$breakpoints,$breakpoint)} {
 		@content;
 	}
 }

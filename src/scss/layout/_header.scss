@@ -1,7 +1,9 @@
+@use '../foundation/global';
+
 // ヘッダー
 .l-header {
-	@include mq(sp) {
-		height: $header-height-sp;
+	@include global.mq(sp) {
+		height: global.$header-height-sp;
 	}
 	// ------------------------------------------------------------
 	// 固定する場合はfixかつ、bodyにpadding-topついてるかチェック
@@ -9,14 +11,14 @@
 	position: fixed;// ヘッダー位置固定
 	top: 0;
 	left: 0;
-	z-index: map-get($layer,header);
+	z-index: map-get(global.$layer,header);
 	width: 100%;
-	height: $header-height-pc;
+	height: global.$header-height-pc;
 	&__title {
 		// ロゴなら
 		width: 100px;
 		height: 100px;
-		transition: opacity $change-time ease 0s;
+		transition: opacity global.$change-time ease 0s;
 		> a, > img {
 			width: 100%;
 			height: 100%;
@@ -33,23 +35,23 @@
 	// ドロワー開いている際はメニュー
 	// ------------------------------------------------------------
 	&__nav {
-		@include mq(sp) {
+		@include global.mq(sp) {
 			position: fixed;// ドロワーメニュー位置固定
 			top: 0;
 			right: 0;
-			z-index: map-get($layer, drawer);
+			z-index: map-get(global.$layer, drawer);
 			transform: translateX(105%); // スマホで閉じてる時は非表示（画面外に押し出す）
 			width: 300px;
 			height: 100%;
 			// padding-top: *px;
-			background: $white;
+			background: global.$white;
 
 			&.is-checked {
 				transform: translateX(0%); // 元の位置に移動
 			}
 		}
 		margin-left: auto;// ナビゲーションを右寄せ
-		transition: all $change-time ease 0s;
+		transition: all global.$change-time ease 0s;
 
 		&--list {
 			// 
@@ -68,9 +70,9 @@
 				height: 2px;
 				content: '';
 				// opacity: 0;// opacity方式でも可能
-				transition: transform $change-time ease 0s;
+				transition: transform global.$change-time ease 0s;
 
-				border-bottom: 2px solid $black;
+				border-bottom: 2px solid global.$black;
 			}
 			&:hover {
 				&::after {
@@ -87,19 +89,19 @@
 	&__drawer {
 		$header-drawer-bar-height: 4px;
 		$header-drawer-bar-margin: 4px;
-		@include mq(sp) { // スマホのみ表示
+		@include global.mq(sp) { // スマホのみ表示
 			// 配下のbarsを上下中央揃え
 			display: flex;
 			align-items: center;
-			height: $header-height-sp;
+			height: global.$header-height-sp;
 		} // ドロワーボタン（ハンバーガメニュー）
 		display: none;
 		position: fixed;
 		top: 0px;
-		right: $padding-sp;
-		z-index: map-get($layer, drawer);
+		right: global.$padding-sp;
+		z-index: map-get(global.$layer, drawer);
 		background: transparent;
-		transition: all $change-time ease 0s;
+		transition: all global.$change-time ease 0s;
 
 		&.is-checked {
 			transform: translateX(-300px); // ボタンの位置を調整
@@ -120,7 +122,7 @@
 			right: 0;
 			width: 100%;
 			height: $header-drawer-bar-height;
-			background: $black;
+			background: global.$black;
 
 			&:nth-of-type(1) {
 				top: 0px;
@@ -152,11 +154,11 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: map-get($layer, drawer-bg);
+		z-index: map-get(global.$layer, drawer-bg);
 		width: 100%;
 		height: 100%;
-		background: $black;
-		transition: all $change-time ease 0s;
+		background: global.$black;
+		transition: all global.$change-time ease 0s;
 		&.is-checked {
 			display: block;
 			opacity: .5;

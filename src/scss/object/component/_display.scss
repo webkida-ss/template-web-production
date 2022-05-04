@@ -1,31 +1,33 @@
+@use '../../foundation/global';
+
 // ------------------------------------------------------------
 // 表示制御（表示）
 // ------------------------------------------------------------
 .c-display-only {
 	// PCだけ表示
 	&-pc {
-		@include mq(tab-only) {
+		@include global.mq(tab-only) {
 			display: none;
 		}
-		@include mq(sp) {
+		@include global.mq(sp) {
 			display: none;
 		}
 	}
 	// タブレットだけ表示
 	&-tab {
-		@include mq(pc) {
+		@include global.mq(pc) {
 			display: none;
 		}
-		@include mq(sp) {
+		@include global.mq(sp) {
 			display: none;
 		}
 	}
 	// スマホだけ表示
 	&-sp {
-		@include mq(pc) {
+		@include global.mq(pc) {
 			display: none;
 		}
-		@include mq(tab-only) {
+		@include global.mq(tab-only) {
 			display: none;
 		}
 	}

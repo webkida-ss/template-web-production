@@ -1,22 +1,24 @@
+@use '../../foundation/global';
+
 // ------------------------------------------------------------
 // 表示制御（非表示）
 // ------------------------------------------------------------
 .c-hidden {
 	// PCだけ非表示
 	&-pc {
-		@include mq(pc) {
+		@include global.mq(pc) {
 			display: none;
 		}
 	}
 	// タブレットだけ非表示
 	&-tab {
-		@include mq(tab-only) {
+		@include global.mq(tab-only) {
 			display: none;
 		}
 	}
 	// SPだけ非表示
 	&-sp {
-		@include mq(sp) {
+		@include global.mq(sp) {
 			display: none;
 		}
 	}
