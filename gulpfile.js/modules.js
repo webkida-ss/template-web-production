@@ -12,7 +12,7 @@ module.exports = { // モジュールをエクスポート
 	// composer: require('gulp-uglify/composer'), //これはよくわからない
 	// postcss: require('gulp-postcss'),
 	// mqpacker: require('css-mqpacker'), // メディアクエリ統一
-	// csscomb: require('gulp-csscomb'), // CSSプロパティ記述整形
+	csscomb: require('gulp-csscomb'), // CSSプロパティ記述整形
 	// autoprefixer: require('autoprefixer'), // ベンダープレフィックス自動付与
 	// ejs: require('gulp-ejs'), // EJS
 };

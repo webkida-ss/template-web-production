@@ -33,6 +33,8 @@ function scss() {
 	return src("./src/scss/**/*.scss")
 		.pipe($.sourcemaps.init())
 		.pipe(sass.sync(output_style))
+		.pipe($.csscomb())
+		.pipe($.sourcemaps.write()) // ソースマップ
 		.pipe(dest(`${path.dist}/css`));
 }
 
