@@ -31,6 +31,7 @@ function scss() {
 	}; // ベンダープレフィックス
 
 	return src("./src/scss/**/*.scss")
+		.pipe($.sourcemaps.init())
 		.pipe(sass.sync(output_style))
 		.pipe(dest(`${path.dist}/css`));
 }
