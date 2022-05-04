@@ -39,6 +39,12 @@ function scss() {
 		]))
 		.pipe($.csscomb())
 		.pipe($.sourcemaps.write()) // ソースマップ
+		.pipe(dest(`${path.dist}/css`)) // 出力先
+		.pipe(
+			$.rename({
+				suffix: '.min', // サフィックスをつけてリネーム
+			})
+		)
 		.pipe(dest(`${path.dist}/css`));
 }
 
