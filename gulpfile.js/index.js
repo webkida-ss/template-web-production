@@ -5,6 +5,7 @@ const {
 	parallel,
 	watch,
 } = require('gulp');
+const $ = require('./__modules.js'); // 分離したmodulesをインポート
 const sass = require('gulp-sass')(require('sass')); // dart-sass指定
 
 // パス
@@ -30,9 +31,7 @@ function scss() {
 	}; // ベンダープレフィックス
 
 	return src("./src/scss/**/*.scss")
-		.pipe(sass.sync({
-			outputStyle: "expanded"
-		}))
+		.pipe(sass.sync(output_style))
 		.pipe(dest(`${path.dist}/css`));
 }
 
