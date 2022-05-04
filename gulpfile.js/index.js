@@ -36,22 +36,22 @@ function scss() {
 				errorHandler: $.notify.onError('Error: <%= error.message %>'),
 			})
 		)
-		.pipe($.sourcemaps.init())
+		// .pipe($.sourcemaps.init())
 		.pipe(sass.sync(output_style))
 		.pipe($.postcss([
 			$.mqpacker(),
 			$.autoprefixer(browser_list) // ベンダープレフィックス
 		]))
 		.pipe($.csscomb())
-		.pipe($.sourcemaps.write()) // ソースマップ
-		.pipe(dest(`${path.dist}/css`)) // 出力先
+		// .pipe($.sourcemaps.write()) // ソースマップ
+		// .pipe(dest(`${path.dist}/css`)) // <style>.css
 		.pipe(
 			$.rename({
 				suffix: '.min', // サフィックスをつけてリネーム
 			})
 		)
 		.pipe($.minifyCSS()) // CSS minify化
-		.pipe(dest(`${path.dist}/css`))
+		.pipe(dest(`${path.dist}/css`)) // <style>.min.css
 		.pipe(
 			$.browserSync.reload({
 				stream: true,
