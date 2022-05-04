@@ -1,7 +1,7 @@
 module.exports = { // モジュールをエクスポート
 	minifyCSS: require('gulp-csso'), // CSS圧縮
 	// concat: require('gulp-concat'), // 複数のファイルを結合
-	// browserSync: require('browser-sync'), // ファイル変更監視ブラウザ反映：Live Server的な
+	browserSync: require('browser-sync'), // ファイル変更監視ブラウザ反映：Live Server的な
 	plumber: require('gulp-plumber'), // エラーで監視が強制終了されるのを防ぐ
 	notify: require('gulp-notify'), // エラーのデスクトップ通知
 	sourcemaps: require('gulp-sourcemaps'), // SourceMapを作成する

@@ -30,5 +30,8 @@
     "gulp-sourcemaps": "^3.0.0",
     "postcss": "^8.4.13",
     "sass": "^1.51.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.9"
   }
 }

@@ -46,7 +46,13 @@ function scss() {
 			})
 		)
 		.pipe($.minifyCSS()) // CSS minify化
-		.pipe(dest(`${path.dist}/css`));
+		.pipe(dest(`${path.dist}/css`))
+		.pipe(
+			$.browserSync.reload({
+				stream: true,
+				once: true,
+			})
+		);
 }
 
 // ========================================================================================
