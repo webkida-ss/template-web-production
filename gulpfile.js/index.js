@@ -5,7 +5,7 @@ const {
 	parallel,
 	watch,
 } = require('gulp');
-const $ = require('./__modules.js'); // 分離したmodulesをインポート
+const $ = require('./modules.js'); // 分離したmodulesをインポート
 const sass = require('gulp-sass')(require('sass')); // dart-sass指定
 
 // パス
@@ -45,6 +45,7 @@ function scss() {
 				suffix: '.min', // サフィックスをつけてリネーム
 			})
 		)
+		.pipe($.minifyCSS()) // CSS minify化
 		.pipe(dest(`${path.dist}/css`));
 }
 

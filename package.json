@@ -21,6 +21,7 @@
     "css-mqpacker": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-csscomb": "^3.1.0",
+    "gulp-csso": "^4.0.1",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
