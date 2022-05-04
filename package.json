@@ -1,0 +1,19 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "template ",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/webkida-ss/template-web-production.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webkida-ss/template-web-production/issues"
+  },
+  "homepage": "https://github.com/webkida-ss/template-web-production#readme"
+}
