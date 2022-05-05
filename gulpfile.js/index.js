@@ -7,6 +7,7 @@ const {
 } = require('gulp');
 const $ = require('./modules.js'); // 分離したmodulesをインポート
 const sass = require('gulp-sass')(require('sass')); // dart-sass指定
+const uglify = $.composer($.uglifyes, $.composer); // JS圧縮
 
 // パス
 const path = {
@@ -95,6 +96,38 @@ function css() {
 		.pipe(dest(`${path.dist}/css/lib`)); // 出力先
 }
 
+// JavaScript =============================================================================
+function js() {
+	// return src(`${path.src}/js/**/*.js`, {
+	return src(`${path.src}/js/script.js`, { // ライブラリはminify化しない(個別に読み込み)
+			sourcemaps: true
+		})
+		.pipe(
+			$.plumber({
+				errorHandler: $.notify.onError('Error: <%= error.message %>'),
+			})
+		)
+		.pipe(uglify({
+			output: {
+				comments: /^!/
+			}
+		}))
+		.pipe(
+			$.concat('script.min.js', {
+				newLine: '\n',
+			})
+		)
+		.pipe(dest(`${path.dist}/js`, {
+			sourcemaps: true
+		}))
+		.pipe(
+			$.browserSync.reload({
+				stream: true,
+				once: true,
+			})
+		);
+}
+
 // ========================================================================================
 // タスクの定義
 exports.php = php;
@@ -112,14 +145,14 @@ exports.default = parallel([scss], () => {
 });
 
 // WP版
-exports.wp = parallel([php, scss, css
-	// , js, js_library, img, bs
+exports.wp = parallel([php, scss, css, js
+	// , js_library, img, bs
 
 ], () => {
 	watch(`./**/*.php`, php);
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/css/**`, css);
-	// watch(`${path.src}/js/**`, js);
+	watch(`${path.src}/js/**`, js);
 	// watch(`${path.src}/js/**`, js_library);
 	// watch(`${path.src}/img/**`, img);
 });
@@ -127,13 +160,13 @@ exports.wp = parallel([php, scss, css
 
 
 // EJS版
-exports.ejs = parallel([ejs, scss, css,
-	// js, js_library, img, bs
+exports.ejs = parallel([ejs, scss, css, js
+	// , js_library, img, bs
 ], () => {
 	watch(`${path.src}/ejs/**`, ejs);
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/css/**`, css);
-	// watch(`${path.src}/js/**`, js);
+	watch(`${path.src}/js/**`, js);
 	// watch(`${path.src}/js/**`, js_library);
 	// watch(`${path.src}/img/**`, img);
 });
