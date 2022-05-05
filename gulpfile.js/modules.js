@@ -4,7 +4,7 @@ module.exports = { // モジュールをエクスポート
 	browserSync: require('browser-sync'), // ファイル変更監視ブラウザ反映：Live Server的な
 	plumber: require('gulp-plumber'), // エラーで監視が強制終了されるのを防ぐ
 	notify: require('gulp-notify'), // エラーのデスクトップ通知
-	// sourcemaps: require('gulp-sourcemaps'), // SourceMapを作成する
+	sourcemaps: require('gulp-sourcemaps'), // SourceMapを作成する
 	rename: require('gulp-rename'), // リネーム
 	// imagemin: require('gulp-imagemin'), // imageのminify化
 	// changed: require('gulp-changed'), // 変更されたファイルだけをStreamに流す

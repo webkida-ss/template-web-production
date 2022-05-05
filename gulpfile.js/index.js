@@ -37,15 +37,15 @@ function scss() {
 				errorHandler: $.notify.onError('Error: <%= error.message %>'),
 			})
 		)
-		// .pipe($.sourcemaps.init())
+		.pipe($.sourcemaps.init())
 		.pipe(sass.sync(options))
 		.pipe($.postcss([
 			$.mqpacker(),
 			$.autoprefixer(browser_list) // ベンダープレフィックス
 		]))
 		.pipe($.csscomb())
-		// .pipe($.sourcemaps.write()) // ソースマップ
-		// .pipe(dest(`${path.dist}/css`)) // <style>.css
+		.pipe($.sourcemaps.write()) // ソースマップ
+		.pipe(dest(`${path.dist}/css`)) // <style>.css
 		.pipe(
 			$.rename({
 				suffix: '.min', // サフィックスをつけてリネーム
