@@ -37,6 +37,17 @@ function ejs() {
 		);
 }
 
+// PHP =====================================================================================
+function php() {
+	return src([`./**/*.php`]) // 対象phpファイル
+		.pipe(
+			$.browserSync.reload({ // ブラウザ即時反映
+				stream: true,
+				once: true,
+			})
+		);
+}
+
 // scss ====================================================================================
 function scss() {
 	// 設定
@@ -80,7 +91,7 @@ function scss() {
 
 // ========================================================================================
 // タスクの定義
-// exports.php = php;
+exports.php = php;
 exports.ejs = ejs;
 exports.scss = scss;
 // exports.css = css;
@@ -92,6 +103,19 @@ exports.scss = scss;
 // デフォルト
 exports.default = parallel([scss], () => {
 	watch(`${path.src}/scss/**`, scss);
+});
+
+// WP版
+exports.wp = parallel([php, scss
+	// , css, js, js_library, img, bs
+
+], () => {
+	watch(`./**/*.php`, php);
+	watch(`${path.src}/scss/**`, scss);
+	// watch(`${path.src}/css/**`, css);
+	// watch(`${path.src}/js/**`, js);
+	// watch(`${path.src}/js/**`, js_library);
+	// watch(`${path.src}/img/**`, img);
 });
 
 
