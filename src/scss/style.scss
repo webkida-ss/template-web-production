@@ -35,7 +35,7 @@
 @use 'object/component/hidden'; // 非表示
 @use 'object/component/button'; // ボタン
 @use 'object/component/floating'; // フローティングアイテム
-// @use 'object/component/breadcrumb'; // パンくずリスト
+@use 'object/component/breadcrumb'; // パンくずリスト
 @use 'object/component/fade-in'; // フェードイン
 
 
