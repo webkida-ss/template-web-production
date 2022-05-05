@@ -134,6 +134,18 @@ function js_library() {
 		.pipe(dest(`${path.dist}/js/lib`));
 }
 
+// 画像 =====================================================================================
+function img() {
+	return src(`${path.src}/img/**/**`) // 対象img
+		.pipe($.changed(`${path.dist}/img/`)) // 変更されたファイルのみ
+		// .pipe(
+		// 	$.imagemin({
+		// 		optimizationLevel: 3, // 圧縮率（圧縮率を高めすぎると劣化する）
+		// 	})
+		// )
+		.pipe(dest(`${path.dist}/img/`)); // 出力先
+}
+
 // BrowserSync ============================================================================
 function bs() {
 	$.browserSync.init({
@@ -156,7 +168,7 @@ exports.css = css;
 exports.js = js;
 exports.js_library = js_library;
 exports.bs = bs;
-// exports.img = img;
+exports.img = img;
 
 // デフォルト
 exports.default = parallel([scss], () => {
@@ -164,16 +176,13 @@ exports.default = parallel([scss], () => {
 });
 
 // WP版
-exports.wp = parallel([php, scss, css, js, js_library
-	// , img
-	, bs
-], () => {
+exports.wp = parallel([php, scss, css, js, js_library, img, bs], () => {
 	watch(`./**/*.php`, php);
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/css/**`, css);
 	watch(`${path.src}/js/**`, js);
 	watch(`${path.src}/js/**`, js_library);
-	// watch(`${path.src}/img/**`, img);
+	watch(`${path.src}/img/**`, img);
 });
 
 

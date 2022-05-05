@@ -7,7 +7,7 @@ module.exports = { // モジュールをエクスポート
 	sourcemaps: require('gulp-sourcemaps'), // SourceMapを作成する
 	rename: require('gulp-rename'), // リネーム
 	// imagemin: require('gulp-imagemin'), // imageのminify化
-	// changed: require('gulp-changed'), // 変更されたファイルだけをStreamに流す
+	changed: require('gulp-changed'), // 変更されたファイルだけをStreamに流す
 	uglifyes: require('uglify-es'), // JS圧縮（ES6版）
 	composer: require('gulp-uglify/composer'), //これはよくわからない
 	postcss: require('gulp-postcss'),
