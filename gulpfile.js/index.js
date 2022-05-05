@@ -23,7 +23,8 @@ const path = {
 // scss ====================================================================================
 function scss() {
 	// 設定
-	const output_style = {
+	const options = {
+		fiber: $.fibers,
 		outputStyle: 'expanded'
 	}; // 出力形式
 	const browser_list = {
@@ -37,7 +38,7 @@ function scss() {
 			})
 		)
 		// .pipe($.sourcemaps.init())
-		.pipe(sass.sync(output_style))
+		.pipe(sass.sync(options))
 		.pipe($.postcss([
 			$.mqpacker(),
 			$.autoprefixer(browser_list) // ベンダープレフィックス
