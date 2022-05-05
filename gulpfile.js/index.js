@@ -89,12 +89,18 @@ function scss() {
 		);
 }
 
+// css：minify化なし
+function css() {
+	return src(`${path.src}/css/*.css`) // 対象cssファイル
+		.pipe(dest(`${path.dist}/css/lib`)); // 出力先
+}
+
 // ========================================================================================
 // タスクの定義
 exports.php = php;
 exports.ejs = ejs;
 exports.scss = scss;
-// exports.css = css;
+exports.css = css;
 // exports.js = js;
 // exports.js_library = js_library;
 // exports.bs = bs;
@@ -106,13 +112,13 @@ exports.default = parallel([scss], () => {
 });
 
 // WP版
-exports.wp = parallel([php, scss
-	// , css, js, js_library, img, bs
+exports.wp = parallel([php, scss, css
+	// , js, js_library, img, bs
 
 ], () => {
 	watch(`./**/*.php`, php);
 	watch(`${path.src}/scss/**`, scss);
-	// watch(`${path.src}/css/**`, css);
+	watch(`${path.src}/css/**`, css);
 	// watch(`${path.src}/js/**`, js);
 	// watch(`${path.src}/js/**`, js_library);
 	// watch(`${path.src}/img/**`, img);
@@ -121,12 +127,12 @@ exports.wp = parallel([php, scss
 
 
 // EJS版
-exports.ejs = parallel([ejs, scss
-	// , css, js, js_library, img, bs
+exports.ejs = parallel([ejs, scss, css,
+	// js, js_library, img, bs
 ], () => {
 	watch(`${path.src}/ejs/**`, ejs);
 	watch(`${path.src}/scss/**`, scss);
-	// watch(`${path.src}/css/**`, css);
+	watch(`${path.src}/css/**`, css);
 	// watch(`${path.src}/js/**`, js);
 	// watch(`${path.src}/js/**`, js_library);
 	// watch(`${path.src}/img/**`, img);
