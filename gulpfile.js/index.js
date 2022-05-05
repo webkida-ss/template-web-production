@@ -134,6 +134,19 @@ function js_library() {
 		.pipe(dest(`${path.dist}/js/lib`));
 }
 
+// BrowserSync ============================================================================
+function bs() {
+	$.browserSync.init({
+		server: {
+			baseDir: path.dist,
+		},
+		//proxy: 'http://localhost:10000/', // ローカルサーバのドメイン
+		notify: true,
+		xip: false,
+	});
+}
+
+
 // ========================================================================================
 // タスクの定義
 exports.php = php;
@@ -142,7 +155,7 @@ exports.scss = scss;
 exports.css = css;
 exports.js = js;
 exports.js_library = js_library;
-// exports.bs = bs;
+exports.bs = bs;
 // exports.img = img;
 
 // デフォルト
@@ -152,8 +165,8 @@ exports.default = parallel([scss], () => {
 
 // WP版
 exports.wp = parallel([php, scss, css, js, js_library
-	// , img, bs
-
+	// , img
+	, bs
 ], () => {
 	watch(`./**/*.php`, php);
 	watch(`${path.src}/scss/**`, scss);
@@ -167,7 +180,8 @@ exports.wp = parallel([php, scss, css, js, js_library
 
 // EJS版
 exports.ejs = parallel([ejs, scss, css, js, js_library
-	// , img, bs
+	// , img
+	, bs
 ], () => {
 	watch(`${path.src}/ejs/**`, ejs);
 	watch(`${path.src}/scss/**`, scss);
