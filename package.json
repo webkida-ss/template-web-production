@@ -19,6 +19,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "css-mqpacker": "^7.0.0",
+    "fibers": "^5.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-csscomb": "^3.1.0",
     "gulp-csso": "^4.0.1",
@@ -36,7 +37,6 @@
   },
   "dependencies": {
     "browser-sync": "^2.27.9",
-    "fibers": "^5.0.1",
     "gulp": "^4.0.2"
   }
 }
