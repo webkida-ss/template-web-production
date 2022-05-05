@@ -1,17 +1,62 @@
 @charset 'UTF-8';
 
-// 00_config
-@import '00_config/_setting';// 基本設定
-@import '00_config/_mixin';// ミックスイン
-@import '00_config/_function';// ファンクション
-@import '00_config/_placeholder';// プレースホルダー
-@import '00_config/_initialize';// 初期化
-@import '00_config/_common';// 共通系
+// ==========================================================================
+// Foundation：その他グローバルセッティングファイルはglobalにて定義
+// ==========================================================================
+@use 'foundation/base';// 基本設定
+@use 'foundation/mixin';// ミックスイン
+@use 'foundation/function';// ファンクション
+@use 'foundation/placeholder';// プレースホルダー
+@use 'foundation/initialize';// 初期化
 
-// 10_parts/common：共通
-@import '10_parts/10_common/_header';// ヘッダー
-@import '10_parts/10_common/_footer';// フッター
+// ==========================================================================
+// Layout
+// ==========================================================================
 
-// 10_parts
-@import '10_parts/_access';// アクセス
-@import '10_parts/_contact';// お問い合わせ
+@use 'layout/_wrapper'; // ラッパー
+@use 'layout/container'; // コンテナー
+@use 'layout/main'; // メイン
+@use 'layout/aside'; // アサイド
+@use 'layout/header';// ヘッダー
+@use 'layout/footer';// フッター
+@use 'layout/sidebar';// サイドバー
+
+
+// ==========================================================================
+// Object
+// ==========================================================================
+
+// -----------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------
+
+
+@use 'object/component/inner'; // インナー
+@use 'object/component/page'; // ページ
+@use 'object/component/section'; // セクション
+@use 'object/component/font' as c-font; // フォント
+@use 'object/component/display'; // 表示
+@use 'object/component/hidden'; // 非表示
+@use 'object/component/button'; // ボタン
+@use 'object/component/floating'; // フローティングアイテム
+@use 'object/component/breadcrumb'; // パンくずリスト
+@use 'object/component/fade-in'; // フェードイン
+
+
+// -----------------------------------------------------------------
+// Project
+// -----------------------------------------------------------------
+
+@use 'object/project/sitemap'; // サイトマップ
+
+@use 'object/project/top'; // トップページ
+@use 'object/project/contact'; // お問い合わせ
+
+
+// -----------------------------------------------------------------
+// Utility
+// -----------------------------------------------------------------
+
+@use 'object/utility/font' as u-font; // フォント
+@use 'object/utility/margin'; // マージン
+@use 'object/utility/padding'; // パディング

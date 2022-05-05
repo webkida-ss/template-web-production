@@ -1,0 +1,167 @@
+@use '../foundation/global';
+
+// ヘッダー
+.l-header {
+	@include global.mq(sp) {
+		height: global.$header-height-sp;
+	}
+	// ------------------------------------------------------------
+	// 固定する場合はfixかつ、bodyにpadding-topついてるかチェック
+	// ------------------------------------------------------------
+	position: fixed;// ヘッダー位置固定
+	top: 0;
+	left: 0;
+	z-index: map-get(global.$layer,header);
+	width: 100%;
+	height: global.$header-height-pc;
+	&__title {
+		// ロゴなら
+		width: 100px;
+		height: 100px;
+		transition: opacity global.$change-time ease 0s;
+		> a, > img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__inner {
+		display: flex; // タイトル と ナビゲーションは横並び
+		align-items: center; // 上下中央揃え
+	}
+
+	// ------------------------------------------------------------
+	// ナビゲーション
+	// ドロワー開いている際はメニュー
+	// ------------------------------------------------------------
+	&__nav {
+		@include global.mq(sp) {
+			position: fixed;// ドロワーメニュー位置固定
+			top: 0;
+			right: 0;
+			z-index: map-get(global.$layer, drawer);
+			transform: translateX(105%); // スマホで閉じてる時は非表示（画面外に押し出す）
+			width: 300px;
+			height: 100%;
+			// padding-top: *px;
+			background: global.$white;
+
+			&.is-checked {
+				transform: translateX(0%); // 元の位置に移動
+			}
+		}
+		margin-left: auto;// ナビゲーションを右寄せ
+		transition: all global.$change-time ease 0s;
+
+		&--list {
+			// 
+		}
+		&--item {
+			// 
+		}
+		&--link {
+			position: relative;
+			// 選択時の下線
+			&::after {
+				display: block;
+				position: absolute;
+				transform: scale(0);// 最初は非表示
+				width: 100%;
+				height: 2px;
+				content: '';
+				// opacity: 0;// opacity方式でも可能
+				transition: transform global.$change-time ease 0s;
+
+				border-bottom: 2px solid global.$black;
+			}
+			&:hover {
+				&::after {
+					// opacity: 1;
+					transform: scale(1);
+				}
+			}
+		}
+	}
+
+	// ------------------------------------------------------------
+	// ドロワー
+	// ------------------------------------------------------------
+	&__drawer {
+		$header-drawer-bar-height: 4px;
+		$header-drawer-bar-margin: 4px;
+		@include global.mq(sp) { // スマホのみ表示
+			// 配下のbarsを上下中央揃え
+			display: flex;
+			align-items: center;
+			height: global.$header-height-sp;
+		} // ドロワーボタン（ハンバーガメニュー）
+		display: none;
+		position: fixed;
+		top: 0px;
+		right: global.$padding-sp;
+		z-index: map-get(global.$layer, drawer);
+		background: transparent;
+		transition: all global.$change-time ease 0s;
+
+		&.is-checked {
+			transform: translateX(-300px); // ボタンの位置を調整
+		}
+		&:hover {
+			cursor: pointer;
+		}
+
+		&--bars {
+			display: inline-block;
+			position: relative;
+			width: 30px;
+			height: ($header-drawer-bar-height * 3) + ($header-drawer-bar-margin * 2);// 4px ✖ 3 + 4px ✖ 2
+		}
+		&--bar {
+			display: block;
+			position: absolute;
+			right: 0;
+			width: 100%;
+			height: $header-drawer-bar-height;
+			background: global.$black;
+
+			&:nth-of-type(1) {
+				top: 0px;
+			}
+			&:nth-of-type(2) {
+				top: $header-drawer-bar-height + $header-drawer-bar-margin;// 8px
+			}
+			&:nth-of-type(3) {
+				top: ($header-drawer-bar-height + $header-drawer-bar-margin) * 2; // 16px
+			}
+
+			.is-checked & {
+				&:nth-of-type(1) {
+					top: 10px;
+					transform: rotate(-45deg);
+				}
+				&:nth-of-type(2) {
+					background: transparent; // バツ印のため2本目は非表示
+				}
+				&:nth-of-type(3) {
+					top: 10px;
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+	&__drawer-bg {// 背景
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: map-get(global.$layer, drawer-bg);
+		width: 100%;
+		height: 100%;
+		background: global.$black;
+		transition: all global.$change-time ease 0s;
+		&.is-checked {
+			display: block;
+			opacity: .5;
+		}
+	}
+}

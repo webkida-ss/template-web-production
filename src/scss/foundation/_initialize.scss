@@ -1,0 +1,115 @@
+@use "base";
+@use "mixin";
+// --------------------------------------------------
+// 初期化
+// ・疑似要素のサイジング → 枠線を含む
+// ・マージン、パディング 0 
+// ・フォント設定
+// ・画像表示設定(block)
+// ・リストスタイル none
+// ・リンクの下線なし、色は親要素を継承
+// --------------------------------------------------
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;// 10px → bodyにて16px
+}
+
+body {
+	// overflow-wrap: break-word;// ブラウザがテキストボックスに改行を入れる場合に文字の途中でも改行する
+	// word-break
+	@include mixin.mq(sp) {
+		padding-top: base.$header-height-sp;
+	}
+	padding-top: base.$header-height-pc;
+	overflow-x: hidden;// 横はみ出：隠す
+	background: base.$color-background-base;
+	color: base.$color-text-base;
+	font-weight: base.$font-weight-base;
+	font-size: base.$font-size-base;
+	line-height: base.$line-height-base;
+	font-family: base.$font-family-base;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border: none;
+}
+
+ul,
+li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	display: block;
+	color: inherit;
+	text-decoration: none;
+	transition: all base.$change-time ease 0s;
+	&:hover {
+		opacity: base.$hover-opacity;
+	}
+}
+
+input[type='submit'],
+button {
+	cursor: pointer;
+	&:hover {
+		opacity: base.$hover-opacity;
+	}
+}
+
+input,
+textarea {
+	&:hover,
+	&:focus {
+		outline: none;
+	}
+}
+
+textarea {
+	display: block;// 下に余計な空白ができるのを防止
+	resize: none;// リサイズなし
+}
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%;
+	font-family: inherit;
+}
+
+// ================================================
+// WordPressネイティブクラス
+// ================================================
+.aligncenter {
+	// display: block;
+	// margin: 0 auto;
+}
+.alignleft {
+	// margin: 10px;
+	// float: left; 
+}
+.alignright {
+	// margin: 10px;
+	// float: right; 
+}

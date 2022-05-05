@@ -1,0 +1,18 @@
+@use '../../foundation/global';
+
+// ------------------------------------------------------------
+// フェードイン
+// フェードインさせたい要素にc-fade-in を付与
+// 元々少しずらしておいて、
+// スクロールに応じてc-scroll-inをJSで付与して位置を戻す
+// ------------------------------------------------------------
+.c-fade-in {
+	opacity: 0;
+    transition-duration: 1000ms;
+    transition-property: opacity, transform;
+    transform: translate(0, 50px);
+}
+.c-scroll-in {
+    opacity: 1;
+    transform: translate(0, 0);
+}

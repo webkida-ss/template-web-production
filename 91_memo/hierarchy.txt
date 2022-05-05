@@ -14,7 +14,7 @@ scss
  |                | ー ***.scss
  |                | ー ***.scss
  |                | ー ***.scss
- |      | ー 10_common
+ |      | ー 10_layout
  |                | ー _footer.scss
  |                | ー _header.scss
  |      | ー 20_component

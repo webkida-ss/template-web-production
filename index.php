@@ -6,23 +6,23 @@
 </head>
 
 <body>
-	<div class="wrapper idx">
+	<div class="l-wrapper">
 
 		<!-------------------------------------------------- 
 		- ヘッダー
 		---------------------------------------------------->
-		<?php get_template_part('src-php/10_common/_header'); ?>
+		<?php get_template_part('src-php/10_layout/_header'); ?>
 
 
 		<!-------------------------------------------------- 
 		- メイン|サイドバー
 		---------------------------------------------------->
-		<div class="container">
+		<div class="l-container">
 
 			<!-------------------------- 
 			- メイン
 			---------------------------->
-			<main class="main">
+			<main class="l-main p-idx">
 				<!-- ショートコード出力 -->
 				<?php echo do_shortcode(''); ?>
 			</main>
@@ -34,12 +34,12 @@
 				<?php get_sidebar(); ?>
 			</aside>
 
-		</div><!-- /.container -->
+		</div><!-- /.l-container -->
 
 		<!-------------------------------------------------- 
 		- フッター
 		---------------------------------------------------->
-		<?php get_template_part('src-php/10_common/_footer'); ?>
+		<?php get_template_part('src-php/10_layout/_footer'); ?>
 	</div><!-- /.wrapper -->
 
 	<?php get_footer(); ?>

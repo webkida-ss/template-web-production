@@ -5,7 +5,7 @@
 - gulp-postcss
 - css-mqpacker
 - autoprefixer
-- postcssgulp-csscomb
+- gulp-csscomb
 <br>
 ※ ksmt-trip-client、デイトラのpackage.jsonを参照すること
 
@@ -25,7 +25,7 @@ https://csscomb.herokuapp.com/config
 - gulp-pug
 - gulp-csso
 - gulp-concat
-- browser-sync、
+- browser-sync
 - gulp-plumber
 - gulp-notify
 - gulp-sourcemaps
@@ -62,3 +62,12 @@ https://csscomb.herokuapp.com/config
 
 - changed <br>
 　https://dev.classmethod.jp/articles/gulp-solo-adv-cal-13/
+
+
+## 追記
+postcssも必要
+
+
+## gulp-sass 5系
+かなり違いがある、特に割り算
+dart-sass

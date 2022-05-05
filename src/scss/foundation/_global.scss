@@ -1,0 +1,6 @@
+// グローバルに参照が必要なセッティングファイル郡
+
+@forward 'base';// 基本設定
+@forward 'mixin';// ミックスイン
+@forward 'function';// ファンクション
+@forward 'placeholder';// プレースホルダー

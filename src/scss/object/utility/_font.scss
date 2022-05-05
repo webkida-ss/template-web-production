@@ -1,0 +1,32 @@
+@use '../../foundation/global';
+@use "sass:math";
+
+// ------------------------------------------------------------
+// フォントユーティリティー
+// ------------------------------------------------------------
+.u-f {
+	$sizes: 10,15,18,20,22,24,26,28,30;
+		
+	// 太字
+	&b {
+		font-weight: global.$font-weight-bold;
+	}
+	// サイズ
+	&s {
+		@each $size in $sizes {
+			&-#{$size} {
+				$font-size: (math.div($size,10));
+				font-size: #{$font-size}rem;
+			}
+		}
+	}
+	// 色
+	&c{
+		&-red{
+			color: red;
+		}
+		&-blue{
+			color: red;
+		}
+	}
+}

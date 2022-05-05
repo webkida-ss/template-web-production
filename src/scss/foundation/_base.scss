@@ -1,0 +1,79 @@
+// --------------------------------------------------
+// 基本設定
+// --------------------------------------------------
+// 外部ライブラリ
+@use "sass:math";
+
+
+// カラー(必要に応じて変更すること)
+$black: #333333;
+$white: #ffffff;
+
+
+// ---
+// $color-active: ; // アクティブ色
+$color-background-base: $white; // 背景色
+$color-text-base: $black; // テキスト色
+$hover-opacity: .6; // 透過度
+
+// ヘッダー高さ
+$header-height-pc: 100px;
+$header-height-sp: 60px;
+
+// 余白
+$padding-pc: 40px;
+$padding-tab: 24px;
+$padding-sp: 15px;
+
+// レイアウト幅
+$layout-width-canvas-pc: 1280px;
+$layout-width-inner-pc: $layout-width-canvas-pc - ($padding-pc * 2);
+$layout-width-canvas-tab: 768px;
+$layout-width-inner-tab: $layout-width-canvas-tab - ($padding-tab * 2);
+$layout-width-canvas-sp: 375px;
+$layout-width-inner-sp: $layout-width-canvas-sp - ($padding-sp * 2);
+
+// 階層
+$layer: (
+	modal: 100, // モダール
+	drawer: 40, // ドロワー
+	drawer-bg: 39, // ドロワーバックグラウンド
+	floating: 30, // フローティングアイテム
+	header: 20, // ヘッダー
+	footer: 10, // フッター
+	default: 1,
+);
+
+// トランジションタイム
+$change-time: 0.5s;
+
+// ---------------------------------------------------------------------------
+// フォント
+// ---------------------------------------------------------------------------
+$font-family-default: "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
+$font-family-english: 'Futura','Gill Sans', sans-serif;
+$font-family-base: $font-family-default;
+$font-weight-base: 400;
+$font-weight-bold: 600;
+$line-height-base: 1;// 基本設定
+$line-height-pra-base: 1.6;// 文章の場合の基本設定
+$font-size-base: 1.6rem; // 基準サイズ（フォントサイズ）
+$font-size-vw-pc: math.div(1000vw,1440);
+$font-size-vw-tab: math.div(1000vw,768);
+$font-size-vw-sp: math.div(1000vw,375);
+
+// レイアウト調整
+$sidebar-width-pc: 200px;
+$sidebar-width-tab: 150px;
+$sidebar-width-sp: 100px;
+$container-margin-pc: 20px;
+
+// ブレイクポイント
+$max-width-sp: 559;
+$max-width-tab: 959;
+$breakpoints: (
+	'sp': '(max-width: #{$max-width-sp}px)', // 〜559
+	'tab-only': '(min-width: #{$max-width-sp + 1}px) and (max-width: #{$max-width-tab}px)', // 560〜959
+	'tab': '(max-width: #{$max-width-tab}px)', // 〜959
+	'pc': '(min-width: #{$max-width-tab + 1}px)', // 960〜
+);

@@ -1,0 +1,41 @@
+@use '../../foundation/global';
+
+// ------------------------------------------------------------
+// パディングユーティリティー
+// ------------------------------------------------------------
+.u-p {
+	$list: 5,10,15,20;
+
+	// トップ
+	&t {
+		@each $num in $list {
+			&-#{$num} {
+				padding-top: #{$num}px;
+			}
+		}
+	}
+	// ライト
+	&r {
+		@each $num in $list {
+			&-#{$num} {
+				padding-right: #{$num}px;
+			}
+		}
+	}
+	// ボトム
+	&b {
+		@each $num in $list {
+			&-#{$num} {
+				padding-bottom: #{$num}px;
+			}
+		}
+	}
+	// レフト
+	&l {
+		@each $num in $list {
+			&-#{$num} {
+				padding-left: #{$num}px;
+			}
+		}
+	}
+}

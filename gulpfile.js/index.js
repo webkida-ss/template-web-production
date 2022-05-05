@@ -1,24 +1,12 @@
-/********************************************************************************************
- * localhost:3000
- * 　HTMLの場合：proxyを有効化せず、serverを有効化
- * 　WordPressの場合：serverを有効化せず、proxyにローカルホストを指定（adminのポートも3000になる）
- * 
- * phpファイルはdistではなく、直下に格納
- ********************************************************************************************/
-
-/********************************************************************************************
- * 事前準備
- * sass-comb/watch-combを使用するには、本ファイルと同階層に .csscomb.jsonが必要
- ********************************************************************************************/
-
 // 変数宣言
 const {
-	src, // gulpからsrcをインポート
-	dest, // gulpからdistをインポート
-	parallel, // gulpからparallelをインポート
-	watch, // gulpからwatchをインポート
+	src,
+	dest,
+	parallel,
+	watch,
 } = require('gulp');
 const $ = require('./modules.js'); // 分離したmodulesをインポート
+const sass = require('gulp-sass')(require('sass')); // dart-sass指定
 const uglify = $.composer($.uglifyes, $.composer); // JS圧縮
 
 // パス
@@ -64,7 +52,8 @@ function php() {
 // scss ====================================================================================
 function scss() {
 	// 設定
-	const output_style = {
+	const options = {
+		fiber: $.fibers,
 		outputStyle: 'expanded'
 	}; // 出力形式
 	const browser_list = {
@@ -78,22 +67,21 @@ function scss() {
 			})
 		)
 		.pipe($.sourcemaps.init())
-		.pipe($.sass(output_style))
+		.pipe(sass.sync(options))
 		.pipe($.postcss([
 			$.mqpacker(),
 			$.autoprefixer(browser_list) // ベンダープレフィックス
 		]))
 		.pipe($.csscomb())
-		// .pipe($.autoprefixer()) // ベンダープレフィックス
 		.pipe($.sourcemaps.write()) // ソースマップ
-		.pipe(dest(`${path.dist}/css`)) // 出力先
+		.pipe(dest(`${path.dist}/css`)) // <style>.css
 		.pipe(
 			$.rename({
 				suffix: '.min', // サフィックスをつけてリネーム
 			})
 		)
 		.pipe($.minifyCSS()) // CSS minify化
-		.pipe(dest(`${path.dist}/css`))
+		.pipe(dest(`${path.dist}/css`)) // <style>.min.css
 		.pipe(
 			$.browserSync.reload({
 				stream: true,
@@ -101,6 +89,7 @@ function scss() {
 			})
 		);
 }
+
 // css：minify化なし
 function css() {
 	return src(`${path.src}/css/*.css`) // 対象cssファイル
@@ -138,6 +127,7 @@ function js() {
 			})
 		);
 }
+
 // jsライブラリ：minify化なし
 function js_library() {
 	return src(`${path.src}/js/lib/*.js`)
@@ -162,7 +152,7 @@ function bs() {
 		server: {
 			baseDir: path.dist,
 		},
-		//proxy: 'http://localhost:10004/', // Local by Flywheelのドメイン
+		//proxy: 'http://localhost:10000/', // ローカルサーバのドメイン
 		notify: true,
 		xip: false,
 	});
@@ -173,7 +163,7 @@ function bs() {
 // タスクの定義
 exports.php = php;
 exports.ejs = ejs;
-exports.scss = scss; // gulp scss
+exports.scss = scss;
 exports.css = css;
 exports.js = js;
 exports.js_library = js_library;
@@ -185,7 +175,6 @@ exports.default = parallel([scss, img, bs], () => {
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/img/**`, img);
 });
-
 
 // WP版
 exports.wp = parallel([php, scss, css, js, js_library, img, bs], () => {
