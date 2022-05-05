@@ -25,7 +25,7 @@
     "gulp-csscomb": "^3.1.0",
     "gulp-csso": "^4.0.1",
     "gulp-ejs": "^5.1.0",
-    "gulp-imagemin": "^8.0.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
