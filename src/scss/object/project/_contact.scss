@@ -1,15 +1,17 @@
+@use '../../foundation/global';
+
 // お問い合わせ
 .p-contact {
 	@extend %section-padding;
 	&__inner {
-		// width:(*px / $layout-width-canvas-pc) * 100%;
+		// width:(*px / global.$layout-width-canvas-pc) * 100%;
 		// padding: 0 *px 0 *px;
-		// @include mq(tab) {
-		// width:(*px / $layout-width-canvas-tab) * 100%;
+		// @include global.mq(tab) {
+		// width:(*px / global.$layout-width-canvas-tab) * 100%;
 		// padding: 0 *px 0 *px;
 		// }
-		@include mq(sp) {
-			// width:(*px / $layout-width-canvas-sp) * 100%;
+		@include global.mq(sp) {
+			// width:(*px / global.$layout-width-canvas-sp) * 100%;
 			// padding: 0 *px 0 *px;
 		}
 	}
@@ -32,8 +34,8 @@
 					display: block;
 					width: 50px;
 					margin-left: 20px;
-					background: $black;
-					color: $white;
+					background: global.$black;
+					color: global.$white;
 					text-align: center;
 					content: '必須';
 				}
@@ -100,7 +102,7 @@
 				&:checked {
 					& + label {
 						&::before {
-							background: $black;
+							background: global.$black;
 						}
 						&::after {
 							opacity: 1;
@@ -118,7 +120,7 @@
 					display: block;
 					position: absolute;
 					content: '';
-					transition: all $change-time ease 0s;
+					transition: all global.$change-time ease 0s;
 				}
 				// カスタムチェックボックス（外枠）
 				&::before {
@@ -126,7 +128,7 @@
 					left: -30px;
 					width: 20px;
 					height: 20px;
-					border: 1px solid $black;
+					border: 1px solid global.$black;
 				}
 				// カスタムボタン（内ぺけ）
 				&::after {
@@ -137,8 +139,8 @@
 					width: 6px;
 					height: 12px;
 
-					border-bottom: 2px solid $white;
-					border-right: 2px solid $white;
+					border-bottom: 2px solid global.$white;
+					border-right: 2px solid global.$white;
 				}
 			}
 		}
@@ -166,7 +168,7 @@
 				&:checked {
 					& + label {
 						&::after {
-							background: $black;
+							background: global.$black;
 						}
 					}
 				}
@@ -184,7 +186,7 @@
 					position: absolute;
 					border-radius: 50%;
 					content: '';
-					transition: all $change-time ease 0s;
+					transition: all global.$change-time ease 0s;
 				}
 				// カスタムボタン（外◯）
 				&::before {
@@ -192,7 +194,7 @@
 					left: -30px;
 					width: 20px;
 					height: 20px;
-					border: 1px solid $black;
+					border: 1px solid global.$black;
 				}
 				// カスタムボタン（内◯）
 				&::after {
@@ -200,7 +202,7 @@
 					left: -26px;
 					width: 12px;
 					height: 12px;
-					background: $white;
+					background: global.$white;
 				}
 			}
 			&:first-child {

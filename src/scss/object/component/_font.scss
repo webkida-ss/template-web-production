@@ -1,15 +1,17 @@
+@use '../../foundation/global';
+
 // ------------------------------------------------------------
 // フォント
 // ------------------------------------------------------------
 .c-font {
 	// 基本設定（よく使う文字）
 	&-normal {
-		@include mq(tab-only) {
+		@include global.mq(tab-only) {
 			font-size: 1.4rem;
 			line-height: 1.4;
 			letter-spacing: .05em;
 		}
-		@include mq(sp) {
+		@include global.mq(sp) {
 			font-size: 1.2rem;
 			letter-spacing: .05em;
 		}

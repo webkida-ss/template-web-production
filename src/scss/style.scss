@@ -1,27 +1,25 @@
 @charset 'UTF-8';
 
 // ==========================================================================
-// Foundation
+// Foundation：その他グローバルセッティングファイルはglobalにて定義
 // ==========================================================================
-
-@import 'foundation/_reset';// リセットCSS
-@import 'foundation/_base';// 基本設定
-@import 'foundation/_mixin';// ミックスイン
-@import 'foundation/_function';// ファンクション
-@import 'foundation/_placeholder';// プレースホルダー
-@import 'foundation/_initialize';// 初期化
+@use 'foundation/base';// 基本設定
+@use 'foundation/mixin';// ミックスイン
+@use 'foundation/function';// ファンクション
+@use 'foundation/placeholder';// プレースホルダー
+@use 'foundation/initialize';// 初期化
 
 // ==========================================================================
 // Layout
 // ==========================================================================
 
-@import 'layout/_wrapper'; // ラッパー
-@import 'layout/_container'; // コンテナー
-@import 'layout/_main'; // メイン
-@import 'layout/_aside'; // アサイド
-@import 'layout/_header';// ヘッダー
-@import 'layout/_footer';// フッター
-@import 'layout/_sidebar';// サイドバー
+@use 'layout/_wrapper'; // ラッパー
+@use 'layout/container'; // コンテナー
+@use 'layout/main'; // メイン
+@use 'layout/aside'; // アサイド
+@use 'layout/header';// ヘッダー
+@use 'layout/footer';// フッター
+@use 'layout/sidebar';// サイドバー
 
 
 // ==========================================================================
@@ -33,32 +31,32 @@
 // -----------------------------------------------------------------
 
 
-@import 'object/component/_inner'; // インナー
-@import 'object/component/_page'; // ページ
-@import 'object/component/_section'; // セクション
-@import 'object/component/_font'; // フォント
-@import 'object/component/_display'; // 表示
-@import 'object/component/_hidden'; // 非表示
-@import 'object/component/_button'; // ボタン
-@import 'object/component/_floating'; // フローティングアイテム
-@import 'object/component/_breadcrumb'; // パンくずリスト
-@import 'object/component/_fade-in'; // フェードイン
+@use 'object/component/inner'; // インナー
+@use 'object/component/page'; // ページ
+@use 'object/component/section'; // セクション
+@use 'object/component/font' as c-font; // フォント
+@use 'object/component/display'; // 表示
+@use 'object/component/hidden'; // 非表示
+@use 'object/component/button'; // ボタン
+@use 'object/component/floating'; // フローティングアイテム
+@use 'object/component/breadcrumb'; // パンくずリスト
+@use 'object/component/fade-in'; // フェードイン
 
 
 // -----------------------------------------------------------------
 // Project
 // -----------------------------------------------------------------
 
-@import 'object/project/_sitemap'; // サイトマップ
+@use 'object/project/sitemap'; // サイトマップ
 
-@import 'object/project/_top'; // トップページ
-@import 'object/project/_contact'; // お問い合わせ
+@use 'object/project/top'; // トップページ
+@use 'object/project/contact'; // お問い合わせ
 
 
 // -----------------------------------------------------------------
 // Utility
 // -----------------------------------------------------------------
 
-@import 'object/utility/_font'; // フォント
-@import 'object/utility/_margin'; // マージン
-@import 'object/utility/_padding'; // パディング
+@use 'object/utility/font' as u-font; // フォント
+@use 'object/utility/margin'; // マージン
+@use 'object/utility/padding'; // パディング

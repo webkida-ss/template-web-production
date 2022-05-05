@@ -1,13 +1,15 @@
+@use '../../foundation/global';
+
 // ------------------------------------------------------------
 // セクション
 // ------------------------------------------------------------
 .c-section {
 
 	&-title {
-		@include mq(sp) {
+		@include global.mq(sp) {
 			// 
 		}
-		font-weight: $font-weight-bold;
+		font-weight: global.$font-weight-bold;
 		text-align: center;
 	}
 }

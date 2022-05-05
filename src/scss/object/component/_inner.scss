@@ -1,17 +1,19 @@
+@use '../../foundation/global';
+
 // ------------------------------------------------------------
 // インナー
 // width：固定値
 // max-width：100% → 縮めたときには100%表示
 // ------------------------------------------------------------
 .c-inner {
-	width: $layout-width-inner-pc;
+	width: global.$layout-width-inner-pc;
 	max-width: 100%;
 	height: inherit;// 高さは親を継承
 	margin: 0 auto;
 	padding: 0 10px;// 縮めたときに余白を持たす
 
-	@include mq(sp) {
+	@include global.mq(sp) {
 		padding: 0 5px;
-		width: $layout-width-inner-sp;
+		width: global.$layout-width-inner-sp;
 	}
 }

@@ -1,6 +1,9 @@
 // --------------------------------------------------
 // 基本設定
 // --------------------------------------------------
+// 外部ライブラリ
+@use "sass:math";
+
 
 // カラー(必要に応じて変更すること)
 $black: #333333;
@@ -55,9 +58,9 @@ $font-weight-bold: 600;
 $line-height-base: 1;// 基本設定
 $line-height-pra-base: 1.6;// 文章の場合の基本設定
 $font-size-base: 1.6rem; // 基準サイズ（フォントサイズ）
-$font-size-vw-pc: (1000vw/1440);
-$font-size-vw-tab: (1000vw/768);
-$font-size-vw-sp: (1000vw/375);
+$font-size-vw-pc: math.div(1000vw,1440);
+$font-size-vw-tab: math.div(1000vw,768);
+$font-size-vw-sp: math.div(1000vw,375);
 
 // レイアウト調整
 $sidebar-width-pc: 200px;

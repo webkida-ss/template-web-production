@@ -6,6 +6,7 @@ const {
 	watch,
 } = require('gulp');
 const $ = require('./modules.js'); // 分離したmodulesをインポート
+const sass = require('gulp-sass')(require('sass')); // dart-sass指定
 const uglify = $.composer($.uglifyes, $.composer); // JS圧縮
 
 // パス
@@ -51,7 +52,8 @@ function php() {
 // scss ====================================================================================
 function scss() {
 	// 設定
-	const output_style = {
+	const options = {
+		fiber: $.fibers,
 		outputStyle: 'expanded'
 	}; // 出力形式
 	const browser_list = {
@@ -65,21 +67,21 @@ function scss() {
 			})
 		)
 		.pipe($.sourcemaps.init())
-		.pipe($.sass(output_style))
+		.pipe(sass.sync(options))
 		.pipe($.postcss([
 			$.mqpacker(),
 			$.autoprefixer(browser_list) // ベンダープレフィックス
 		]))
 		.pipe($.csscomb())
 		.pipe($.sourcemaps.write()) // ソースマップ
-		.pipe(dest(`${path.dist}/css`)) // 出力先
+		.pipe(dest(`${path.dist}/css`)) // <style>.css
 		.pipe(
 			$.rename({
 				suffix: '.min', // サフィックスをつけてリネーム
 			})
 		)
 		.pipe($.minifyCSS()) // CSS minify化
-		.pipe(dest(`${path.dist}/css`))
+		.pipe(dest(`${path.dist}/css`)) // <style>.min.css
 		.pipe(
 			$.browserSync.reload({
 				stream: true,
@@ -173,7 +175,6 @@ exports.default = parallel([scss, img, bs], () => {
 	watch(`${path.src}/scss/**`, scss);
 	watch(`${path.src}/img/**`, img);
 });
-
 
 // WP版
 exports.wp = parallel([php, scss, css, js, js_library, img, bs], () => {

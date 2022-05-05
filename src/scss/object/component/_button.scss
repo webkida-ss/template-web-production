@@ -1,14 +1,16 @@
+@use '../../foundation/global';
+
 // ------------------------------------------------------------
 // ボタン
 // ------------------------------------------------------------
 .c-btn {
 	display: flex;
 	align-items: center;
-	font-weight: $font-weight-bold;
+	font-weight: global.$font-weight-bold;
 	text-align: center;
 	cursor: pointer;
 	&:hover {
-		opacity: $hover-opacity;
+		opacity: global.$hover-opacity;
 	}
 
 	> span {
