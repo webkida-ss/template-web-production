@@ -19,6 +19,23 @@ const path = {
  * タスク定義
  ********************************************************************************************/
 
+// EJS =====================================================================================
+function ejs() {
+	return src([`${path.src}/ejs/*.ejs`, `!${path.src}/ejs/**/_*.ejs`]) // 対象EJSファイル
+		.pipe($.ejs({}, {}, {
+			ext: ".html" // htmlにコンパイル
+		}))
+		.pipe($.rename({
+			extname: ".html" //拡張子を.htmlにリネーム
+		}))
+		.pipe(dest(path.dist)) // 出力先
+		.pipe(
+			$.browserSync.reload({ // ブラウザ即時反映
+				stream: true,
+				once: true,
+			})
+		);
+}
 
 // scss ====================================================================================
 function scss() {
@@ -63,9 +80,30 @@ function scss() {
 
 // ========================================================================================
 // タスクの定義
+// exports.php = php;
+exports.ejs = ejs;
 exports.scss = scss;
+// exports.css = css;
+// exports.js = js;
+// exports.js_library = js_library;
+// exports.bs = bs;
+// exports.img = img;
 
 // デフォルト
 exports.default = parallel([scss], () => {
 	watch(`${path.src}/scss/**`, scss);
+});
+
+
+
+// EJS版
+exports.ejs = parallel([ejs, scss
+	// , css, js, js_library, img, bs
+], () => {
+	watch(`${path.src}/ejs/**`, ejs);
+	watch(`${path.src}/scss/**`, scss);
+	// watch(`${path.src}/css/**`, css);
+	// watch(`${path.src}/js/**`, js);
+	// watch(`${path.src}/js/**`, js_library);
+	// watch(`${path.src}/img/**`, img);
 });

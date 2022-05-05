@@ -14,6 +14,6 @@ module.exports = { // モジュールをエクスポート
 	mqpacker: require('css-mqpacker'), // メディアクエリ統一
 	csscomb: require('gulp-csscomb'), // CSSプロパティ記述整形
 	autoprefixer: require('autoprefixer'), // ベンダープレフィックス自動付与
-	// ejs: require('gulp-ejs'), // EJS
+	ejs: require('gulp-ejs'), // EJS
 	fibers: require("fibers"), // sassコンパイル高速化
 };
